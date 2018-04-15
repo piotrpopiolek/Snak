@@ -1,0 +1,6 @@
+C:\Users\Lenovo\Documents\GitHub\Snak\Client\Client\bin\Debug\Client.exe.config
+C:\Users\Lenovo\Documents\GitHub\Snak\Client\Client\bin\Debug\Client.exe
+C:\Users\Lenovo\Documents\GitHub\Snak\Client\Client\bin\Debug\Client.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\GitHub\Snak\Client\Client\obj\Debug\Client.exe
+C:\Users\Lenovo\Documents\GitHub\Snak\Client\Client\obj\Debug\Client.pdb
