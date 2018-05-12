@@ -8,25 +8,34 @@ namespace Antycheat
 {
     class ProhibitedProcesses
     {
-        private List<string> processes;
+        private static List<string> processes = new List<string>();
+        private static System.Object lockThis = new System.Object();
 
-        public ProhibitedProcesses()
+        private ProhibitedProcesses()
         {
-            processes = new List<string>();
         }
 
-        public ProhibitedProcesses(List<string> processesList)
+        /// <summary>
+        /// Sets a list of prohibited processes
+        /// </summary>
+        /// <param name="prohibitedProcesses">List of prohibited processes</param>
+        public static void setProhibitedProcesses(List<string> prohibitedProcesses)
         {
-            processes = new List<string>();
+            lock (lockThis)
+            {
+                processes = prohibitedProcesses;
+            }
         }
 
         /// <summary>
         /// Returns a list of prohibited processes
         /// </summary>
         /// <returns>List of prohibited processes</returns>
-        public List<string> getProhibitedProcesses()
+        public static List<string> getProhibitedProcesses()
         {
-            return processes;
+            lock (lockThis) { 
+                return processes;
+            }
         }
 
         /// <summary>
@@ -34,13 +43,16 @@ namespace Antycheat
         /// </summary>
         /// <param name="name">Name of process</param>
         /// <returns>True if process is prohibited, false otherwise</returns>
-        public Boolean isProhibited(string name)
+        public static Boolean isProhibited(string name)
         {
-            foreach (string processName in processes)
+            lock (lockThis)
             {
-                if (name.Equals(processName))
+                foreach (string processName in processes)
                 {
-                    return true;
+                    if (name.Equals(processName))
+                    {
+                        return true;
+                    }
                 }
             }
             return false;
@@ -50,18 +62,24 @@ namespace Antycheat
         /// Adds a new process to a list of prohibited processes
         /// </summary>
         /// <param name="name">Process name</param>
-        public void add(string name)
+        public static void add(string name)
         {
-            processes.Add(name);
+            lock (lockThis)
+            {
+                processes.Add(name);
+            }
         }
 
         /// <summary>
         /// Removes process from a list of prohibited processes
         /// </summary>
         /// <param name="name">Process name</param>
-        public void remove(string name)
+        public static void remove(string name)
         {
-            processes.Remove(name);
+            lock (lockThis)
+            {
+                processes.Remove(name);
+            }
         }
     }
 }
