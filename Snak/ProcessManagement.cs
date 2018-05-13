@@ -34,11 +34,16 @@ namespace Antycheat
                     Process[] listOfProcesses = Process.GetProcessesByName(prohibited[i]);
                     for(int j = 0; j < listOfProcesses.Length; j++)
                     {
+                        try { 
                         listOfProcesses[j].Kill();
                         // tutaj poinformuj serwer o zlamaniu zakazu
                         ThreadStart childref = new ThreadStart(showError);
                         Thread childThread = new Thread(childref);
                         childThread.Start();
+                        }catch(Exception e)
+                        {
+                            Debug.WriteLine(e.ToString());
+                        }
                      }
                 }
                 Thread.Sleep(3000);

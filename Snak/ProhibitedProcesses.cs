@@ -66,7 +66,10 @@ namespace Antycheat
         {
             lock (lockThis)
             {
-                processes.Add(name);
+                if (!processes.Contains(name))
+                {
+                    processes.Add(name);
+                }
             }
         }
 
@@ -78,7 +81,10 @@ namespace Antycheat
         {
             lock (lockThis)
             {
-                processes.Remove(name);
+                if (processes.Contains(name))
+                {
+                    processes.Remove(name);
+                }
             }
         }
     }
