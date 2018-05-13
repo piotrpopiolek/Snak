@@ -111,11 +111,13 @@ namespace ConsoleApplication11
             lock (Zamek_Listy_hostow)
             { Lista_Hostow_Dozwolonych = dozwolone; }
         }
+        //Dodaje Hosta do Listy Hostow Zabronionych
         public void Dodaj_Lista_Hostow_Zabronionych(string zabronione)
         {
             lock (Zamek_Listy_hostow)
             { Lista_Hostow_Zabronionych.Add(zabronione); }
         }
+        //Dodaje Hosta do Listy Hostow Dozwolonych
         public void Dodaj_Lista_Hostow_Dozwolonych(string dozwolone)
         {
             lock (Zamek_Listy_hostow)
