@@ -1,0 +1,22 @@
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe.config
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\bin\Debug\Snak Klient.pdb
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Form1.resources
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Properties.Resources.resources
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.GenerateResource.Cache
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\obj\Debug\Snak Klient.exe
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\obj\Debug\Snak Klient.pdb
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Form1.resources
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Properties.Resources.resources
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.GenerateResource.Cache
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.exe
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.pdb
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Interop.NETCONLib.dll
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Interop.NetFwTypeLib.dll
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.ResolveComReference.cache
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe.config
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.pdb
