@@ -14,10 +14,12 @@ namespace ConsoleApplication11
 {
     // Wymaga Winpacap
     /*
+    // Kod wymagany do uruchomienia Niuchacza
     Niuchacz niuchacz = new Niuchacz();
     var Watek_Niuchania = new System.Threading.Thread(niuchacz.Start);
     Watek_Niuchania.Start();
     ...
+    // Kod wymagany do zamkniencia Niuchacza
     niuchacz.Stop();
     Watek_Niuchania.Join();
     */
@@ -41,7 +43,7 @@ namespace ConsoleApplication11
         private static List<string> Lista_Naruszen_Bialej_Listy = new List<string>();
 
         private static List<byte> bity = new List<byte>();
-
+        //zwraca lub ustawia tryb czarnej listy
         public bool Tryb_Czarnej_Listy
         {
             get
@@ -54,7 +56,7 @@ namespace ConsoleApplication11
                 Black_List = value;
             }
         }
-
+        //zwraca lub ustawia tryb bialej listy
         public bool Tryb_Bialej_Listy
         {
             get
@@ -67,57 +69,65 @@ namespace ConsoleApplication11
                 White_List = value;
             }
         }
+        //Zwraca true kiedy wykryto naruszenie Czarnej Listy
         public bool Naruszono_Czarna_Liste()
         {
             return Naruszono_Black_List;
         }
+        //Zwraca true kiedy wykryto naruszenie Czarnej Listy
         public bool Naruszono_Biala_Liste()
         {
             return Naruszono_White_List;
         }
-
+        //Zwraca Liste wszystkich wykrytych domen
         public List<string> Zwroc_Lista_Hostow()
         {
             lock (Zamek_Listy_hostow)
             { return Lista_Hostow; }
         }
+        //Zwraca zawartosc Czarnej Listy
         public List<string> Zwroc_Lista_Hostow_Zabronionych()
         {
             lock (Zamek_Listy_hostow)
             { return Lista_Hostow_Zabronionych; }
         }
+        //Zwraca zawartosc Bialej Listy
         public List<string> Zwroc_Lista_Hostow_Dozwolonych()
         {
             lock (Zamek_Listy_hostow)
             { return Lista_Hostow_Dozwolonych; }
         }
+        //Zwraca Liste Naruszen Czarnej Listy
         public List<string> Zwroc_Lista_Naruszen_Czarnej_Listy()
         {
             lock (Zamek_Listy_hostow)
             { return Lista_Naruszen_Czarnej_Listy; }
         }
+        //Zwraca Liste Naruszen Bialej Listy
         public List<string> Zwroc_Lista_Naruszen_Bialej_Listy()
         {
             lock (Zamek_Listy_hostow)
             { return Lista_Naruszen_Bialej_Listy; }
         }
+        //Ustawia Czarna Liste na podana liste 
         public void Wczytaj_Lista_Hostow_Zabronionych(List<string> zabronione)
         {
             lock (Zamek_Listy_hostow)
             { Lista_Hostow_Zabronionych = zabronione; }
         }
+        //Ustawia Biala Liste na podana liste 
         public void Wczytaj_Lista_Hostow_Dozwolonych(List<string> dozwolone)
         {
             lock (Zamek_Listy_hostow)
             { Lista_Hostow_Dozwolonych = dozwolone; }
         }
-        //Dodaje Hosta do Listy Hostow Zabronionych
+        //Dodaje domene do Czarnej Listy
         public void Dodaj_Lista_Hostow_Zabronionych(string zabronione)
         {
             lock (Zamek_Listy_hostow)
             { Lista_Hostow_Zabronionych.Add(zabronione); }
         }
-        //Dodaje Hosta do Listy Hostow Dozwolonych
+        //Dodaje domene do Bialej Listy
         public void Dodaj_Lista_Hostow_Dozwolonych(string dozwolone)
         {
             lock (Zamek_Listy_hostow)
@@ -218,7 +228,7 @@ namespace ConsoleApplication11
                                                     Lista_Naruszen_Czarnej_Listy.Add(Lista_Pol_Http[i].ValueString + "|" + pakiet.Timestamp.ToString());
                                                     Console.WriteLine("Wykryto Naruszenie Czarnej Listy - Host: " + Lista_Pol_Http[i].ValueString+" "+ pakiet.Timestamp.ToString());
                                                 }
-                                                if (!Lista_Hostow_Dozwolonych.Contains(Lista_Pol_Http[i].ValueString) && White_List)
+                                                if ((!Lista_Hostow_Dozwolonych.Contains(Lista_Pol_Http[i].ValueString)) && White_List)
                                                 {
                                                     Naruszono_White_List = true;
                                                     Lista_Naruszen_Bialej_Listy.Add(Lista_Pol_Http[i].ValueString + "|" + pakiet.Timestamp.ToString());
@@ -267,7 +277,7 @@ namespace ConsoleApplication11
                                             Lista_Naruszen_Czarnej_Listy.Add(host + "|" + pakiet.Timestamp.ToString());
                                             Console.WriteLine("Wykryto Naruszenie Czarnej Listy - Host: " + host + " " + pakiet.Timestamp.ToString());
                                         }
-                                        if (!Lista_Hostow_Dozwolonych.Contains(host) && White_List)
+                                        if ((!Lista_Hostow_Dozwolonych.Contains(host)) && White_List)
                                         {
                                             Naruszono_White_List = true;
                                             Lista_Naruszen_Bialej_Listy.Add(host + "|" + pakiet.Timestamp.ToString());
@@ -295,16 +305,9 @@ namespace ConsoleApplication11
         static void Main(string[] args)
         {
             Niuchacz niuchacz = new Niuchacz();
-            niuchacz.Tryb_Bialej_Listy = true;
             var Watek_Niuchania = new System.Threading.Thread(niuchacz.Start);
             Watek_Niuchania.Start();
-            Console.ReadKey();
-            niuchacz.Wczytaj_Lista_Hostow_Dozwolonych(niuchacz.Zwroc_Lista_Hostow());
-            Console.ReadKey();
-            niuchacz.Tryb_Bialej_Listy = false;
-            niuchacz.Tryb_Czarnej_Listy = true;
-            niuchacz.Wczytaj_Lista_Hostow_Zabronionych(niuchacz.Zwroc_Lista_Hostow());
-            Console.ReadKey();
+            
             niuchacz.Stop();
             Watek_Niuchania.Join();
         }
