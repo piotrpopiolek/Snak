@@ -16,7 +16,11 @@ namespace Snak_Klient
     public partial class Form1 : Form
     {
         private int serwerKomendPort = 1978;
+<<<<<<< HEAD
         private IPAddress serwerDanychIP;
+=======
+        private IPAddress serwerDanychIP = IPAddress.Parse("127.0.0.1");
+>>>>>>> origin/0.0.3
         private int serwerDanychPort = 25000;
         private string adresLokalnyIP;
 
@@ -26,11 +30,17 @@ namespace Snak_Klient
 
 
             IPHostEntry adresyIP = Dns.GetHostEntry(Dns.GetHostName());
+<<<<<<< HEAD
 
             // Get local IP address
             IPAddress ip = Dns.GetHostAddresses(Dns.GetHostName()).Where(address => address.AddressFamily == AddressFamily.InterNetwork).First();
             // Convert to string
             adresLokalnyIP = ip.ToString();
+=======
+            //adresLokalnyIP = adresyIP.AddressList[0].ToString();
+            adresLokalnyIP = "127.0.0.1";
+            backgroundWorker1.RunWorkerAsync();
+>>>>>>> origin/0.0.3
         }
 
         //Bezpieczne odwoływanie się z innego wątku do własności kontrolek
@@ -162,7 +172,11 @@ namespace Snak_Klient
         //Wysłanie wiadomości o gotowości klienta
         private void Form1_Load_1(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             // chyba nic tu nie trzeba
+=======
+            WyslijWiadomoscUDP("HI:" + adresLokalnyIP);
+>>>>>>> origin/0.0.3
         }
 
         //Wysłanie wiadomości o zakończeniu pracy przez klienta
@@ -170,6 +184,7 @@ namespace Snak_Klient
         {
             WyslijWiadomoscUDP("BYE:" + adresLokalnyIP);
         }
+<<<<<<< HEAD
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -198,5 +213,7 @@ namespace Snak_Klient
                 MessageBox.Show("Podano zly adres IP");
             }
         }
+=======
+>>>>>>> origin/0.0.3
     }
 }

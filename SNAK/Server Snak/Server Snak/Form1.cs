@@ -221,11 +221,19 @@ namespace Server_Snak
                     //###########################
 
                 } else
+<<<<<<< HEAD
                 if (cmd[0] == "BYE")
                 {
                     this.SetTextConsole("Klient o adresie IP: " + cmd[1] + " rozłączył się.");
                     for (int i = 0; i < listBox1.Items.Count; i++)
                         if (listBox1.Items[i].ToString() == cmd[1])
+=======
+                if (cmd[1] == "BYE")
+                {
+                    this.SetTextConsole("Klient o adresie IP: " + cmd[2] + " rozłączył się.");
+                    for (int i = 0; i < listBox1.Items.Count; i++)
+                        if (listBox1.Items[i].ToString() == cmd[2])
+>>>>>>> origin/0.0.3
                             this.RemoveText(i);
                 } else
                 {

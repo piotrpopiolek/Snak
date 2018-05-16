@@ -31,9 +31,12 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+=======
+>>>>>>> origin/0.0.3
             this.SuspendLayout();
             // 
             // listBox1
@@ -44,7 +47,10 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(615, 225);
             this.listBox1.TabIndex = 0;
+<<<<<<< HEAD
             this.listBox1.Visible = false;
+=======
+>>>>>>> origin/0.0.3
             // 
             // backgroundWorker1
             // 
@@ -59,6 +65,7 @@
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Konsola";
+<<<<<<< HEAD
             this.label1.Visible = false;
             // 
             // button1
@@ -87,15 +94,20 @@
             this.label2.Size = new System.Drawing.Size(147, 22);
             this.label2.TabIndex = 4;
             this.label2.Text = "Adres IP serwera";
+=======
+>>>>>>> origin/0.0.3
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 285);
+<<<<<<< HEAD
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+=======
+>>>>>>> origin/0.0.3
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -115,9 +127,12 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label1;
+<<<<<<< HEAD
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+=======
+>>>>>>> origin/0.0.3
     }
 }
 
