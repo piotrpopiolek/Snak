@@ -1,0 +1,9 @@
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak\bin\Debug\Snak.exe.config
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak\bin\Debug\Snak.exe
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak\bin\Debug\Snak.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak\obj\Debug\Snak.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak\obj\Debug\Snak.Properties.Resources.resources
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak\obj\Debug\Snak.csproj.GenerateResource.Cache
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak\obj\Debug\Snak.exe
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak\obj\Debug\Snak.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak\obj\Debug\Snak.Form1.resources

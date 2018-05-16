@@ -239,9 +239,6 @@ namespace Server_Snak
             string commandArgument = textBoxNazwa.Text;
             string command = "";
 
-            if (listBox1.SelectedIndex == -1)
-                return;
-
             try
             {
                 // DODAWANIE
@@ -322,9 +319,9 @@ namespace Server_Snak
                 // WYSYLANIE KOMUNIKATU
 
                 // DO KAZDEGO
-                if (checkBox1.Checked)
+                if (checkBox1.Checked == true)
                 {
-                    foreach (Object item in listBox1.SelectedItems)
+                    foreach (Object item in listBox1.Items)
                     {
                         string address = item as string;
 
@@ -337,6 +334,9 @@ namespace Server_Snak
                 } else
                 // TYLKO DO ZAZNACZONEGO
                 {
+                    if (listBox1.SelectedIndex == -1)
+                        return;
+
                     TcpClient klient = new TcpClient(listBox1.Items[listBox1.SelectedIndex].ToString(), 1978);
                     NetworkStream ns = klient.GetStream();
 
