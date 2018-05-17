@@ -348,7 +348,7 @@ namespace Server_Snak
                 } else
                 // TYLKO DO ZAZNACZONEGO
                 {
-                    foreach (Object item in listBox1.Items)
+                    foreach (Object item in listBox1.SelectedItems)
                     {
                         string address = item as string;
 

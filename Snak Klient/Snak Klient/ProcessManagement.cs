@@ -109,8 +109,8 @@ namespace Antycheat
 
         private void showError()
         {
-            MessageBox.Show("Program należy do programów zabronionych", "Antycheat",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //MessageBox.Show("Program należy do programów zabronionych", "Antycheat",
+                            //MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
