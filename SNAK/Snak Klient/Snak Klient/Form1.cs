@@ -1,4 +1,7 @@
 ﻿using System;
+using FWCtrl;
+using Antycheat;
+
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +22,9 @@ namespace Snak_Klient
         private IPAddress serwerDanychIP;
         private int serwerDanychPort = 25000;
         private string adresLokalnyIP;
+
+        FirewallController firewallController;
+        ProcessManagement processController;
 
         public Form1()
         {
@@ -103,12 +109,16 @@ namespace Snak_Klient
                             // ROZKAD DO PROCESU W TRYBIE AKTYWNYM
                             this.SetText("Komenda: " + dane);
                             WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
+
+                            ProhibitedProcesses.add(cmd[3]);
                         }
                         else if(cmd[2] == "PA")
                         {
                             // ROZKAZ DO PROCESU W TRYBiE PASYWNYM
                             this.SetText("Komenda: " + dane);
                             WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
+
+                            ProhibitedProcesses.add(cmd[3]);
                         }
                         else
                         {
@@ -135,6 +145,8 @@ namespace Snak_Klient
                         // PROCES
                         this.SetText("Komenda: " + dane);
                         WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
+
+                        ProhibitedProcesses.remove(cmd[2]);
                     } else
                     {
                         // Unknown command
@@ -168,7 +180,14 @@ namespace Snak_Klient
         //Wysłanie wiadomości o zakończeniu pracy przez klienta
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            WyslijWiadomoscUDP("BYE:" + adresLokalnyIP + ":");
+            try
+            {
+                WyslijWiadomoscUDP("BYE:" + adresLokalnyIP + ":");
+            }
+            catch (Exception)
+            {
+                //
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -192,11 +211,24 @@ namespace Snak_Klient
 
                 // start polaczenia
                 backgroundWorker1.RunWorkerAsync();
+
+                // Firewall
+
+
+                // Procesy
+                processController = new ProcessManagement(serwerDanychIP.ToString(), adresLokalnyIP);
+
+                backgroundWorker2.RunWorkerAsync();
             }
             catch (Exception)
             {
                 MessageBox.Show("Podano zly adres IP");
             }
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            processController.guardAggressive();
         }
     }
 }

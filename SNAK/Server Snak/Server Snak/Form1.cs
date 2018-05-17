@@ -181,13 +181,13 @@ namespace Server_Snak
                             if (cmd[4] == "PA")
                             {
                                 // DODANIE PROCESU W TRYBIE PASYWNYM
-                                string text = cmd[1] + "-P-" + cmd[5];
+                                string text = cmd[1] + ":P:" + cmd[5];
                                 this.SetTextProces(text);
                             }
                             else if (cmd[4] == "AK")
                             {
                                 // DODANIE PROCESU W TRYBIE AKTYWNYM
-                                string text = cmd[1] + "-A-" + cmd[5];
+                                string text = cmd[1] + ":A:" + cmd[5];
                                 this.SetTextProces(text);
                             }
                             else
@@ -226,6 +226,10 @@ namespace Server_Snak
                     }
                     //###########################
 
+                } else
+                if (cmd[0] == "NAR")
+                {
+                    this.SetTextConsole("Naruszenie-" + cmd[1] + " procesu o nazwie " + cmd[4]);
                 } else
                 if (cmd[0] == "BYE")
                 {
@@ -312,7 +316,8 @@ namespace Server_Snak
                     {
                         // PROCES
                         command = "DEL:PS";
-                        commandArgument = listBoxProces.SelectedItem.ToString();
+                        string[] cmd = listBoxProces.SelectedItem.ToString().Split(new char[] { ':' });
+                        commandArgument = cmd[2];
 
                         RemoveTextProces(listBoxProces.SelectedIndex);
                     }

@@ -1,15 +1,21 @@
 ﻿using System;
+using Snak_Klient;
+
 using System.Windows;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
+using System.Net.Sockets;
+using System.Text;
 
 namespace Antycheat
 {
     class ProcessManagement
     {
+        string serwerAddress;
 
+        string clientAddress;
         /* private Socket clientSocket;
 
          public ProcessManagement(Socket clientSocket)
@@ -24,6 +30,12 @@ namespace Antycheat
         ~ProcessManagement()
         {
             Thread.CurrentThread.Abort();
+        }
+
+        public ProcessManagement(string address, string address2)
+        {
+            serwerAddress = address;
+            clientAddress = address2;
         }
 
 
@@ -46,6 +58,7 @@ namespace Antycheat
                             //Thread childThread = new Thread(childref);
                             showError();
                             //childThread.Start();
+                            WyslijWiadomoscUDP("NAR:" + clientAddress + ":PS:AK:" + listOfProcesses[j].ToString() + ":");
                         }
                         catch (Exception e)
                         {
@@ -70,11 +83,18 @@ namespace Antycheat
                     Process[] listOfProcesses = Process.GetProcessesByName(prohibited[i]);
                     for (int j = 0; j < listOfProcesses.Length; j++)
                     {
-                        // tutaj poinformuj serwer o zlamaniu zakazu
+                        WyslijWiadomoscUDP("NAR:" + clientAddress + ":PS:PA:" + listOfProcesses[j].ToString() + ":");
                     }
                 }
                 Thread.Sleep(3000);
             }
+        }
+        private void WyslijWiadomoscUDP(string wiadomosc)
+        {
+            UdpClient klient = new UdpClient(serwerAddress, 43210);
+            byte[] bufor = Encoding.ASCII.GetBytes(wiadomosc);
+            klient.Send(bufor, bufor.Length);
+            klient.Close();
         }
 
         /// <summary>
@@ -89,8 +109,8 @@ namespace Antycheat
 
         private void showError()
         {
-            MessageBox.Show("Program należy do programów zabronionych", "Antycheat",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //MessageBox.Show("Program należy do programów zabronionych", "Antycheat",
+                           // MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
