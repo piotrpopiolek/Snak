@@ -159,12 +159,15 @@ namespace Server_Snak
                             if (cmd[4] == "PA")
                             {
                                 // DODANIE DO FIREWALLA W TRYBIE PASYWNYM
-                                this.SetTextDomena(cmd[5] + " - P");
+                                String text = cmd[5] + "-P-" + cmd[1];
+                                this.SetTextDomena(text);
                             }
                             else if (cmd[4] == "AK")
                             {
                                 // DODANIE DO FIREWALLA W TRYBIE AKTYWNYM
-                                this.SetTextDomena(cmd[5] + " - A");
+                                string text = cmd[5];
+                                text = text + "-A-" + cmd[1];
+                                this.SetTextDomena(text);
                             } else
                             {
                                 this.SetTextConsole("Otrzymano nieznany komunikat");
@@ -176,12 +179,14 @@ namespace Server_Snak
                             if (cmd[4] == "PA")
                             {
                                 // DODANIE PROCESU W TRYBIE PASYWNYM
-                                this.SetTextProces(cmd[5] + " - P");
+                                string text = cmd[5] + "-P-" + cmd[1];
+                                this.SetTextDomena(text);
                             }
                             else if (cmd[4] == "AK")
                             {
                                 // DODANIE PROCESU W TRYBIE AKTYWNYM
-                                this.SetTextProces(cmd[5] + " - A");
+                                string text = cmd[5] + "-A-" + cmd[1];
+                                this.SetTextDomena(text);
                             }
                             else
                             {
@@ -238,6 +243,8 @@ namespace Server_Snak
         {
             string commandArgument = textBoxNazwa.Text;
             string command = "";
+
+            if ((checkBox1.Checked == false) && listBox1.SelectedIndex == -1) return;
 
             try
             {
@@ -334,14 +341,16 @@ namespace Server_Snak
                 } else
                 // TYLKO DO ZAZNACZONEGO
                 {
-                    if (listBox1.SelectedIndex == -1)
-                        return;
+                    foreach (Object item in listBox1.Items)
+                    {
+                        string address = item as string;
 
-                    TcpClient klient = new TcpClient(listBox1.Items[listBox1.SelectedIndex].ToString(), 1978);
-                    NetworkStream ns = klient.GetStream();
+                        TcpClient klient = new TcpClient(address, 1978);
+                        NetworkStream ns = klient.GetStream();
 
-                    byte[] bufor = Encoding.ASCII.GetBytes(command + ":" + commandArgument);
-                    ns.Write(bufor, 0, bufor.Length);
+                        byte[] bufor = Encoding.ASCII.GetBytes(command + ":" + commandArgument);
+                        ns.Write(bufor, 0, bufor.Length);
+                    }
                 }
 
                 //##########
