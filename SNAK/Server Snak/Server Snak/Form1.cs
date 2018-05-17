@@ -22,6 +22,9 @@ namespace Server_Snak
 
             listBoxDomena.SelectionMode = SelectionMode.One;
             listBoxProces.SelectionMode = SelectionMode.One;
+            comboBoxChange.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMode.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxRodzaj.DropDownStyle = ComboBoxStyle.DropDownList;
 
             backgroundWorker1.RunWorkerAsync();
             backgroundWorker2.RunWorkerAsync();
@@ -149,7 +152,7 @@ namespace Server_Snak
                 } else
                 if (cmd[0] == "PAS")
                 {
-                    this.SetTextConsole("Klient o adresie IP: " + cmd[1] + " wykonał komendę " + dane);
+                    this.SetTextConsole("Klient: " + cmd[1] + " wykonał komendę " + dane);
                     // TUTAJ PO OTRZYMANIU POTWIERDZENIA O WYKONANJE AKCJI USTAWIAMY LISTBOXY
                     if (cmd[2] == "ADD")
                     {
@@ -159,14 +162,13 @@ namespace Server_Snak
                             if (cmd[4] == "PA")
                             {
                                 // DODANIE DO FIREWALLA W TRYBIE PASYWNYM
-                                String text = cmd[5] + "-P-" + cmd[1];
+                                string text = cmd[1] + "-P-" + cmd[5];
                                 this.SetTextDomena(text);
                             }
                             else if (cmd[4] == "AK")
                             {
                                 // DODANIE DO FIREWALLA W TRYBIE AKTYWNYM
-                                string text = cmd[5];
-                                text = text + "-A-" + cmd[1];
+                                string text = cmd[1] + "-A-" + cmd[5];
                                 this.SetTextDomena(text);
                             } else
                             {
@@ -179,14 +181,14 @@ namespace Server_Snak
                             if (cmd[4] == "PA")
                             {
                                 // DODANIE PROCESU W TRYBIE PASYWNYM
-                                string text = cmd[5] + "-P-" + cmd[1];
-                                this.SetTextDomena(text);
+                                string text = cmd[1] + "-P-" + cmd[5];
+                                this.SetTextProces(text);
                             }
                             else if (cmd[4] == "AK")
                             {
                                 // DODANIE PROCESU W TRYBIE AKTYWNYM
-                                string text = cmd[5] + "-A-" + cmd[1];
-                                this.SetTextDomena(text);
+                                string text = cmd[1] + "-A-" + cmd[5];
+                                this.SetTextProces(text);
                             }
                             else
                             {
@@ -335,7 +337,7 @@ namespace Server_Snak
                         TcpClient klient = new TcpClient(address, 1978);
                         NetworkStream ns = klient.GetStream();
 
-                        byte[] bufor = Encoding.ASCII.GetBytes(command + ":" + commandArgument);
+                        byte[] bufor = Encoding.ASCII.GetBytes(command + ":" + commandArgument + ":");
                         ns.Write(bufor, 0, bufor.Length);
                     }
                 } else
@@ -348,7 +350,7 @@ namespace Server_Snak
                         TcpClient klient = new TcpClient(address, 1978);
                         NetworkStream ns = klient.GetStream();
 
-                        byte[] bufor = Encoding.ASCII.GetBytes(command + ":" + commandArgument);
+                        byte[] bufor = Encoding.ASCII.GetBytes(command + ":" + commandArgument + ":");
                         ns.Write(bufor, 0, bufor.Length);
                     }
                 }
@@ -432,7 +434,7 @@ namespace Server_Snak
 
         private void textBoxNazwa_TextChanged(object sender, EventArgs e)
         {
-
+            //
         }
     }
 }

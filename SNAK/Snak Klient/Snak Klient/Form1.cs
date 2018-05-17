@@ -81,13 +81,13 @@ namespace Snak_Klient
                         {
                             // ROZKAZ DO FIREWALLA W TRYBIE AKTYWNYM
                             this.SetText("Komenda: " + dane);
-                            WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane);
+                            WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
                         }
                         else if(cmd[2] == "PA")
                         {
                             // ROZKAZ DO FIREWALL W TRYBIE PASYWNYM
                             this.SetText("Komenda: " + dane);
-                            WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane);
+                            WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
                         }
                         else
                         {
@@ -102,13 +102,13 @@ namespace Snak_Klient
                         {
                             // ROZKAD DO PROCESU W TRYBIE AKTYWNYM
                             this.SetText("Komenda: " + dane);
-                            WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane);
+                            WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
                         }
                         else if(cmd[2] == "PA")
                         {
                             // ROZKAZ DO PROCESU W TRYBiE PASYWNYM
                             this.SetText("Komenda: " + dane);
-                            WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane);
+                            WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
                         }
                         else
                         {
@@ -129,12 +129,12 @@ namespace Snak_Klient
                     {
                         // FIREWALL
                         this.SetText("Komenda: " + dane);
-                        WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane);
+                        WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
                     } else if (cmd[1] == "PS")
                     {
                         // PROCES
                         this.SetText("Komenda: " + dane);
-                        WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane);
+                        WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
                     } else
                     {
                         // Unknown command
@@ -168,7 +168,7 @@ namespace Snak_Klient
         //Wysłanie wiadomości o zakończeniu pracy przez klienta
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            WyslijWiadomoscUDP("BYE:" + adresLokalnyIP);
+            WyslijWiadomoscUDP("BYE:" + adresLokalnyIP + ":");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -179,7 +179,7 @@ namespace Snak_Klient
                 serwerDanychIP = IPAddress.Parse(textBox1.Text);
 
                 WyslijWiadomoscUDP("HI:" + adresLokalnyIP);
-                this.SetText("Wyslano komunikat HI:" + adresLokalnyIP);
+                this.SetText("Wyslano komunikat HI:" + adresLokalnyIP + ":");
 
                 // wywalenie ekranu laczenia
                 label2.Visible = false;
