@@ -90,6 +90,10 @@
             this.listBoxBanDomens = new System.Windows.Forms.ListBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.listBoxClient6 = new System.Windows.Forms.ListBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.listBoxClient5 = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -104,6 +108,10 @@
             this.tabPage4.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonSend
@@ -704,6 +712,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.groupBox10);
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -714,12 +723,51 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.groupBox9);
             this.tabPage6.Location = new System.Drawing.Point(4, 29);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(980, 509);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Screenshot";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.listBoxClient6);
+            this.groupBox9.Location = new System.Drawing.Point(708, 34);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(239, 338);
+            this.groupBox9.TabIndex = 0;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Klienci";
+            // 
+            // listBoxClient6
+            // 
+            this.listBoxClient6.FormattingEnabled = true;
+            this.listBoxClient6.ItemHeight = 20;
+            this.listBoxClient6.Location = new System.Drawing.Point(7, 26);
+            this.listBoxClient6.Name = "listBoxClient6";
+            this.listBoxClient6.Size = new System.Drawing.Size(226, 304);
+            this.listBoxClient6.TabIndex = 0;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.listBoxClient5);
+            this.groupBox10.Location = new System.Drawing.Point(754, 24);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(200, 349);
+            this.groupBox10.TabIndex = 0;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Klienci";
+            // 
+            // listBoxClient5
+            // 
+            this.listBoxClient5.FormattingEnabled = true;
+            this.listBoxClient5.ItemHeight = 20;
+            this.listBoxClient5.Location = new System.Drawing.Point(7, 26);
+            this.listBoxClient5.Name = "listBoxClient5";
+            this.listBoxClient5.Size = new System.Drawing.Size(187, 304);
+            this.listBoxClient5.TabIndex = 0;
             // 
             // Form1
             // 
@@ -752,6 +800,10 @@
             this.tabPage4.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -818,6 +870,10 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.ListBox listBoxBanDomens;
         private System.Windows.Forms.ListBox listBoxBanProcesses;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.ListBox listBoxClient5;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.ListBox listBoxClient6;
     }
 }
 

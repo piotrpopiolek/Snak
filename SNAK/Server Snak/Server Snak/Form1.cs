@@ -64,6 +64,8 @@ namespace Server_Snak
                 this.listBoxClient2.Items.Add(tekst);
                 this.listBoxClient3.Items.Add(tekst);
                 this.listBoxClient4.Items.Add(tekst);
+                this.listBoxClient5.Items.Add(tekst);
+                this.listBoxClient6.Items.Add(tekst);
             }
         }
 
@@ -121,6 +123,11 @@ namespace Server_Snak
             else
             {
                 listBoxClient1.Items.RemoveAt(pozycja);
+                listBoxClient2.Items.RemoveAt(pozycja);
+                listBoxClient3.Items.RemoveAt(pozycja);
+                listBoxClient4.Items.RemoveAt(pozycja);
+                listBoxClient5.Items.RemoveAt(pozycja);
+                listBoxClient6.Items.RemoveAt(pozycja);
             }
         }
 
@@ -173,7 +180,8 @@ namespace Server_Snak
                         }
                     listaKlientow.DodajKlienta(cmd[2], cmd[1]);
                     this.SetText(cmd[2]);
-                } else
+                }
+                else
                 if (cmd[0] == "PAS")
                 {
                     this.SetTextConsole("Klient: " + listaKlientow.IPDoNazwy(cmd[1]) + " wykonał komendę " + dane);
@@ -194,7 +202,8 @@ namespace Server_Snak
                                 // DODANIE DO FIREWALLA W TRYBIE AKTYWNYM
                                 string text = listaKlientow.IPDoNazwy(cmd[1]) + ":AK:" + cmd[5];
                                 this.SetTextDomena(text);
-                            } else
+                            }
+                            else
                             {
                                 this.SetTextConsole("Otrzymano nieznany komunikat");
                             }
@@ -224,7 +233,7 @@ namespace Server_Snak
                             this.SetTextConsole("Otrzymano nieznany komunikat");
                         }
                     }
-                    else if(cmd[2] == "DEL")
+                    else if (cmd[2] == "DEL")
                     {
                         // usuwanie
                         if (cmd[3] == "FW")
@@ -233,7 +242,7 @@ namespace Server_Snak
                             //int pozycja = listBoxDomena.Items.IndexOf(cmd[4]);
                             //RemoveTextDomena(pozycja);
                         }
-                        else if(cmd[3] == "PS")
+                        else if (cmd[3] == "PS")
                         {
                             // USUNIECIE PROCESU
                             //int pozycja = listBoxProces.Items.IndexOf(cmd[4]);
@@ -250,21 +259,21 @@ namespace Server_Snak
                     }
                     //###########################
 
-                } else
+                }
+                else
                 if (cmd[0] == "NAR")
                 {
                     this.SetTextConsole("Naruszenie - " + listaKlientow.IPDoNazwy(cmd[1]) + " - procesu o nazwie " + cmd[4]);
-                } else
+                }
+                else
                 if (cmd[0] == "BYE")
                 {
-                    this.SetTextConsole("Klient o adresie IP: " + cmd[1] + " i nazwie"+ listaKlientow.IPDoNazwy(cmd[1]) +"rozłączył się.");
+                    string nazwa = listaKlientow.IPDoNazwy(cmd[1]);
+                    this.SetTextConsole("Klient o adresie IP: " + cmd[1] + " i nazwie" + nazwa + "rozłączył się.");
                     for (int i = 0; i < listBoxClient1.Items.Count; i++)
-                        if (listBoxClient1.Items[i].ToString() == cmd[1])
+                        if (listBoxClient1.Items[i].ToString() == nazwa)
                             this.RemoveText(i);
                     listaKlientow.UsunKlienta(cmd[1]);
-                } else
-                {
-                    this.SetTextConsole("Otrzymano nieznany komunikat");
                 }
             }
         }

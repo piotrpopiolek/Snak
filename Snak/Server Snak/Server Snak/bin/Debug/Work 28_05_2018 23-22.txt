@@ -1,0 +1,4 @@
+23:23:06 Nowy klient o adresie IP: 192.168.0.15 oraz nazwie - Ts
+23:23:07 Klient o adresie IP: 192.168.0.15 i nazwieTsrozłączył się.
+23:23:32 Nowy klient o adresie IP: 192.168.0.15 oraz nazwie - redsf
+23:23:47 Klient o adresie IP: 192.168.0.15 i nazwieredsfrozłączył się.
