@@ -104,7 +104,7 @@ namespace Server_Snak
             else
             {
                 this.listBoxConsole.Items.Add(DateTime.Now.ToString("HH:mm:ss") + " " + tekst);
-                File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " " + tekst);
+                File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " " + tekst + "\n");
             }
         }
 
