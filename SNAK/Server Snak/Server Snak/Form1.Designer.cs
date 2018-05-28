@@ -60,30 +60,32 @@
             this.labelTextIP = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxAddProcesToList = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.listBoxProcesses = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.listBoxClient2 = new System.Windows.Forms.ListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxAddDomenToList = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.listBoxClient3 = new System.Windows.Forms.ListBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.listBoxDomens = new System.Windows.Forms.ListBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.listBoxClient4 = new System.Windows.Forms.ListBox();
+            this.buttonAddProcesToList = new System.Windows.Forms.Button();
+            this.buttonAddDomenToList = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -391,8 +393,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.buttonAddProcesToList);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.textBoxAddProcesToList);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.comboBox1);
             this.tabPage2.Controls.Add(this.label9);
@@ -409,19 +412,19 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(174, 437);
+            this.label10.Location = new System.Drawing.Point(56, 438);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(99, 20);
             this.label10.TabIndex = 7;
             this.label10.Text = "Podaj nazwe";
             // 
-            // textBox2
+            // textBoxAddProcesToList
             // 
-            this.textBox2.Location = new System.Drawing.Point(284, 432);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 6;
+            this.textBoxAddProcesToList.Location = new System.Drawing.Point(162, 438);
+            this.textBoxAddProcesToList.Name = "textBoxAddProcesToList";
+            this.textBoxAddProcesToList.Size = new System.Drawing.Size(100, 26);
+            this.textBoxAddProcesToList.TabIndex = 6;
             // 
             // button1
             // 
@@ -454,7 +457,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.listBox3);
+            this.groupBox4.Controls.Add(this.listBoxProcesses);
             this.groupBox4.Location = new System.Drawing.Point(22, 55);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(578, 351);
@@ -462,21 +465,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Lista Procesów";
             // 
-            // listBox3
+            // listBoxProcesses
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 20;
-            this.listBox3.Items.AddRange(new object[] {
-            "netbeans",
-            "calculator",
-            "firefox",
-            "cmd",
-            "chrome",
-            "VSHub"});
-            this.listBox3.Location = new System.Drawing.Point(26, 28);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(523, 284);
-            this.listBox3.TabIndex = 2;
+            this.listBoxProcesses.FormattingEnabled = true;
+            this.listBoxProcesses.ItemHeight = 20;
+            this.listBoxProcesses.Location = new System.Drawing.Point(26, 28);
+            this.listBoxProcesses.Name = "listBoxProcesses";
+            this.listBoxProcesses.Size = new System.Drawing.Size(523, 284);
+            this.listBoxProcesses.TabIndex = 2;
             // 
             // groupBox3
             // 
@@ -511,8 +507,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.buttonAddDomenToList);
             this.tabPage3.Controls.Add(this.label12);
-            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.textBoxAddDomenToList);
             this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.groupBox6);
             this.tabPage3.Controls.Add(this.groupBox5);
@@ -528,18 +525,18 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(292, 432);
+            this.label12.Location = new System.Drawing.Point(98, 431);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 20);
+            this.label12.Size = new System.Drawing.Size(99, 20);
             this.label12.TabIndex = 6;
-            this.label12.Text = "Z poza listy";
+            this.label12.Text = "Podaj nazwe";
             // 
-            // textBox3
+            // textBoxAddDomenToList
             // 
-            this.textBox3.Location = new System.Drawing.Point(386, 425);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 26);
-            this.textBox3.TabIndex = 5;
+            this.textBoxAddDomenToList.Location = new System.Drawing.Point(203, 425);
+            this.textBoxAddDomenToList.Name = "textBoxAddDomenToList";
+            this.textBoxAddDomenToList.Size = new System.Drawing.Size(100, 26);
+            this.textBoxAddDomenToList.TabIndex = 5;
             // 
             // button2
             // 
@@ -582,7 +579,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.listBox5);
+            this.groupBox5.Controls.Add(this.listBoxDomens);
             this.groupBox5.Location = new System.Drawing.Point(21, 63);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(588, 338);
@@ -590,14 +587,14 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Lista domen";
             // 
-            // listBox5
+            // listBoxDomens
             // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.ItemHeight = 20;
-            this.listBox5.Location = new System.Drawing.Point(20, 54);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(518, 244);
-            this.listBox5.TabIndex = 0;
+            this.listBoxDomens.FormattingEnabled = true;
+            this.listBoxDomens.ItemHeight = 20;
+            this.listBoxDomens.Location = new System.Drawing.Point(20, 54);
+            this.listBoxDomens.Name = "listBoxDomens";
+            this.listBoxDomens.Size = new System.Drawing.Size(518, 244);
+            this.listBoxDomens.TabIndex = 0;
             // 
             // comboBox2
             // 
@@ -657,6 +654,26 @@
             this.listBoxClient4.Name = "listBoxClient4";
             this.listBoxClient4.Size = new System.Drawing.Size(254, 284);
             this.listBoxClient4.TabIndex = 0;
+            // 
+            // buttonAddProcesToList
+            // 
+            this.buttonAddProcesToList.Location = new System.Drawing.Point(289, 434);
+            this.buttonAddProcesToList.Name = "buttonAddProcesToList";
+            this.buttonAddProcesToList.Size = new System.Drawing.Size(75, 35);
+            this.buttonAddProcesToList.TabIndex = 8;
+            this.buttonAddProcesToList.Text = "Dodaj";
+            this.buttonAddProcesToList.UseVisualStyleBackColor = true;
+            this.buttonAddProcesToList.Click += new System.EventHandler(this.buttonAddProcesToList_Click);
+            // 
+            // buttonAddDomenToList
+            // 
+            this.buttonAddDomenToList.Location = new System.Drawing.Point(325, 425);
+            this.buttonAddDomenToList.Name = "buttonAddDomenToList";
+            this.buttonAddDomenToList.Size = new System.Drawing.Size(81, 26);
+            this.buttonAddDomenToList.TabIndex = 7;
+            this.buttonAddDomenToList.Text = "Dodaj";
+            this.buttonAddDomenToList.UseVisualStyleBackColor = true;
+            this.buttonAddDomenToList.Click += new System.EventHandler(this.buttonAddDomenToList_Click);
             // 
             // Form1
             // 
@@ -729,25 +746,27 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox listBoxProcesses;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.ListBox listBoxClient3;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.ListBox listBoxDomens;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxAddProcesToList;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxAddDomenToList;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.ListBox listBoxClient4;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label labelTextIP;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button buttonAddProcesToList;
+        private System.Windows.Forms.Button buttonAddDomenToList;
     }
 }
 

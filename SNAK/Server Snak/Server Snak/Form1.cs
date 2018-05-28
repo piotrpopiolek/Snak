@@ -18,6 +18,8 @@ namespace Server_Snak
     {
         ListaKlientow listaKlientow = new ListaKlientow();
         string plik = "Work " + DateTime.Today.ToString("dd_MM_yyyy") + " " + DateTime.Now.ToString("HH-mm") + ".txt";
+        string listProcessFile = "List Processes.txt";
+        string listDomensFile = "List Domens.txt";
 
         public Form1()
         {
@@ -25,6 +27,13 @@ namespace Server_Snak
 
             listBoxDomena.SelectionMode = SelectionMode.One;
             listBoxProces.SelectionMode = SelectionMode.One;
+
+            //Nowe listBoxy
+            listBoxProcesses.SelectionMode = SelectionMode.One;
+            listBoxProcesses.DataSource = File.ReadAllLines(listProcessFile);
+            listBoxDomens.SelectionMode = SelectionMode.One;
+            listBoxDomens.DataSource = File.ReadAllLines(listDomensFile);
+
             comboBoxChange.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMode.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxRodzaj.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -456,6 +465,20 @@ namespace Server_Snak
         private void textBoxNazwa_TextChanged(object sender, EventArgs e)
         {
             //
+        }
+
+        private void buttonAddProcesToList_Click(object sender, EventArgs e)
+        {
+            File.AppendAllText(listProcessFile, textBoxAddProcesToList.Text + "\n");
+            //Podczas dodawania ma się też od razu wysłać jako rozkaz do klientów
+            //na liscie przykładowych procesów pojawi się po restarcie serwera.
+        }
+
+        private void buttonAddDomenToList_Click(object sender, EventArgs e)
+        {
+            File.AppendAllText(listDomensFile, textBoxAddDomenToList.Text + "\n");
+            //Podczas dodawania ma się też od razu wysłać jako rozkaz do klientów
+            //na liscie przykładowych domen pojawi się po restarcie serwera.
         }
     }
 }
