@@ -36,7 +36,7 @@ namespace Server_Snak
             // Convert to string
             string adresLokalnyIP = ip.ToString();
 
-            labelText.Text = "Adres IP serwera - " + adresLokalnyIP;
+            labelTextIP.Text = "Adres IP serwera - " + adresLokalnyIP;
         }
 
         //Bezpieczne odwoływanie się z innego wątku do własności kontrolek
@@ -454,11 +454,6 @@ namespace Server_Snak
         private void textBoxNazwa_TextChanged(object sender, EventArgs e)
         {
             //
-        }
-        //Zmiana zakładki
-        private void button3_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tabPage2;
         }
     }
 }
