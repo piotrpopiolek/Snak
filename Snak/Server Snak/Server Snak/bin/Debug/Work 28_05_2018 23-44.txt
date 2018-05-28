@@ -1,0 +1,4 @@
+23:45:34 Nowy klient o adresie IP: 192.168.0.15 oraz nazwie - T
+23:45:54 Brak nazwy
+23:46:06 Brak nazwy
+23:46:12 Klient o adresie IP: 192.168.0.15 i nazwieT rozłączył się.

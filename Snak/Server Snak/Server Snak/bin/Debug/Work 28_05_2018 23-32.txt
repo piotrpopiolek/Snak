@@ -1,0 +1,2 @@
+23:32:32 Nowy klient o adresie IP: 192.168.0.15 oraz nazwie - Testy
+23:33:27 Klient o adresie IP: 192.168.0.15 i nazwieTestyrozłączył się.

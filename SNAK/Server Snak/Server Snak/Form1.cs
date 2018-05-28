@@ -29,9 +29,9 @@ namespace Server_Snak
             listBoxProces.SelectionMode = SelectionMode.One;
 
             //Nowe listBoxy
-            listBoxProcesses.SelectionMode = SelectionMode.One;
+            listBoxProcesses.SelectionMode = SelectionMode.MultiSimple;
             listBoxProcesses.DataSource = File.ReadAllLines(listProcessFile);
-            listBoxDomens.SelectionMode = SelectionMode.One;
+            listBoxDomens.SelectionMode = SelectionMode.MultiSimple;
             listBoxDomens.DataSource = File.ReadAllLines(listDomensFile);
 
             comboBoxChange.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -65,7 +65,6 @@ namespace Server_Snak
                 this.listBoxClient3.Items.Add(tekst);
                 this.listBoxClient4.Items.Add(tekst);
                 this.listBoxClient5.Items.Add(tekst);
-                this.listBoxClient6.Items.Add(tekst);
             }
         }
 
@@ -127,7 +126,6 @@ namespace Server_Snak
                 listBoxClient3.Items.RemoveAt(pozycja);
                 listBoxClient4.Items.RemoveAt(pozycja);
                 listBoxClient5.Items.RemoveAt(pozycja);
-                listBoxClient6.Items.RemoveAt(pozycja);
             }
         }
 
@@ -269,7 +267,7 @@ namespace Server_Snak
                 if (cmd[0] == "BYE")
                 {
                     string nazwa = listaKlientow.IPDoNazwy(cmd[1]);
-                    this.SetTextConsole("Klient o adresie IP: " + cmd[1] + " i nazwie" + nazwa + "rozłączył się.");
+                    this.SetTextConsole("Klient o adresie IP: " + cmd[1] + " i nazwie" + nazwa + " rozłączył się.");
                     for (int i = 0; i < listBoxClient1.Items.Count; i++)
                         if (listBoxClient1.Items[i].ToString() == nazwa)
                             this.RemoveText(i);
@@ -488,6 +486,105 @@ namespace Server_Snak
             File.AppendAllText(listDomensFile, textBoxAddDomenToList.Text + "\n");
             //Podczas dodawania ma się też od razu wysłać jako rozkaz do klientów
             //na liscie przykładowych domen pojawi się po restarcie serwera.
+        }
+
+        private void buttonSendCommandProces_Click(object sender, EventArgs e)
+        {
+            //Do dopisania usuwanie blokad
+            string commandArgument = textBoxNazwa.Text;
+            string command = "";
+
+            if ((checkBox2.Checked == false) && listBoxClient2.SelectedIndex == -1) return;
+
+            try
+            {
+                // DODAWANIE
+                if (comboBoxChange1.Text == "zabronione")
+                {
+                    // aktywny
+                    if (comboBoxMode1.Text == "Aktywny")
+                    {
+                        // DODAJ PROCES W TRYBIE AKTYWNYM                            
+                        command = "ADD:PS:AK";
+                        commandArgument = listBoxProcesses.SelectedItem.ToString();
+                    }
+                }
+                // USUWANIE
+                else
+                {
+                    if (listBoxDomena.SelectedIndex != -1)
+                    {
+                        // DOMENA
+                        command = "DEL:FW";
+                        commandArgument = listBoxBanDomens.SelectedItem.ToString();
+
+                        RemoveTextDomena(listBoxDomena.SelectedIndex);
+                    }
+                    else if (listBoxProces.SelectedIndex != -1)
+                    {
+                        // PROCES
+                        command = "DEL:PS";
+                        string[] cmd = listBoxBanProcesses.SelectedItem.ToString().Split(new char[] { ':' });
+                        commandArgument = cmd[1] + ":" + cmd[2];
+
+                        RemoveTextProces(listBoxProces.SelectedIndex);
+                    }
+                    else
+                    {
+                        // ERROR
+                        this.SetText("ERROR");
+                    }
+                }
+
+                //##########
+
+                // WYSYLANIE KOMUNIKATU
+
+                // DO KAZDEGO
+                if (checkBox2.Checked == true)
+                {
+                    foreach (string item in listBoxClient2.Items)
+                    {
+                        string address = listaKlientow.NazwaDoIP(item);
+
+                        TcpClient klient = new TcpClient(address, 1978);
+                        NetworkStream ns = klient.GetStream();
+
+                        byte[] bufor = Encoding.ASCII.GetBytes(command + ":" + commandArgument + ":");
+                        ns.Write(bufor, 0, bufor.Length);
+                    }
+                }
+                else
+                // TYLKO DO ZAZNACZONEGO
+                {
+                    foreach (string item in listBoxClient2.SelectedItems)
+                    {
+                        string address = listaKlientow.NazwaDoIP(item);
+
+                        TcpClient klient = new TcpClient(address, 1978);
+                        NetworkStream ns = klient.GetStream();
+
+                        byte[] bufor = Encoding.ASCII.GetBytes(command + ":" + commandArgument + ":");
+                        ns.Write(bufor, 0, bufor.Length);
+                    }
+                }
+
+                //##########
+
+                if (backgroundWorker1.IsBusy == false)
+                    backgroundWorker1.RunWorkerAsync();
+                else
+                {
+                    //MessageBox.Show("Błąd: backgroundWorker1.IsBusy == false");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Błąd: Nie można nawiązać połączenia");
+            }
+
+            // czyszczenie textboxa
+            textBoxNazwa.Text = "";
         }
     }
 }
