@@ -86,6 +86,10 @@
             this.listBoxClient4 = new System.Windows.Forms.ListBox();
             this.buttonAddProcesToList = new System.Windows.Forms.Button();
             this.buttonAddDomenToList = new System.Windows.Forms.Button();
+            this.listBoxBanProcesses = new System.Windows.Forms.ListBox();
+            this.listBoxBanDomens = new System.Windows.Forms.ListBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -98,6 +102,7 @@
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -348,6 +353,8 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(16, 12);
             this.tabControl1.Name = "tabControl1";
@@ -629,9 +636,11 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.listBoxBanDomens);
+            this.groupBox8.Controls.Add(this.listBoxBanProcesses);
             this.groupBox8.Location = new System.Drawing.Point(24, 40);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(626, 338);
+            this.groupBox8.Size = new System.Drawing.Size(626, 457);
             this.groupBox8.TabIndex = 1;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "O kliencie";
@@ -675,6 +684,43 @@
             this.buttonAddDomenToList.UseVisualStyleBackColor = true;
             this.buttonAddDomenToList.Click += new System.EventHandler(this.buttonAddDomenToList_Click);
             // 
+            // listBoxBanProcesses
+            // 
+            this.listBoxBanProcesses.FormattingEnabled = true;
+            this.listBoxBanProcesses.ItemHeight = 20;
+            this.listBoxBanProcesses.Location = new System.Drawing.Point(20, 43);
+            this.listBoxBanProcesses.Name = "listBoxBanProcesses";
+            this.listBoxBanProcesses.Size = new System.Drawing.Size(258, 184);
+            this.listBoxBanProcesses.TabIndex = 0;
+            // 
+            // listBoxBanDomens
+            // 
+            this.listBoxBanDomens.FormattingEnabled = true;
+            this.listBoxBanDomens.ItemHeight = 20;
+            this.listBoxBanDomens.Location = new System.Drawing.Point(296, 43);
+            this.listBoxBanDomens.Name = "listBoxBanDomens";
+            this.listBoxBanDomens.Size = new System.Drawing.Size(310, 184);
+            this.listBoxBanDomens.TabIndex = 1;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(980, 509);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Dyski";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 29);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(980, 509);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Screenshot";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -704,6 +750,7 @@
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -767,6 +814,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button buttonAddProcesToList;
         private System.Windows.Forms.Button buttonAddDomenToList;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.ListBox listBoxBanDomens;
+        private System.Windows.Forms.ListBox listBoxBanProcesses;
     }
 }
 
