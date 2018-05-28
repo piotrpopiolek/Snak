@@ -455,6 +455,11 @@ namespace Server_Snak
         {
             //
         }
+        //Zmiana zakładki
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage2;
+        }
     }
 }
 

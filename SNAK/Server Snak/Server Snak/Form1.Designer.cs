@@ -58,42 +58,43 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.labelText = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.listBoxClient2 = new System.Windows.Forms.ListBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.listBoxClient3 = new System.Windows.Forms.ListBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.listBox5 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.labelText = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.listBoxClient3 = new System.Windows.Forms.ListBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.listBoxClient4 = new System.Windows.Forms.ListBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
@@ -354,6 +355,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.listBoxProces);
             this.tabPage1.Controls.Add(this.buttonSend);
             this.tabPage1.Controls.Add(this.comboBoxRodzaj);
@@ -372,7 +374,7 @@
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(980, 509);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Podsumowanie";
@@ -389,27 +391,75 @@
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(980, 509);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Wybierz procesy";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // textBox2
             // 
-            this.tabPage3.Controls.Add(this.label12);
-            this.tabPage3.Controls.Add(this.textBox3);
-            this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.groupBox6);
-            this.tabPage3.Controls.Add(this.groupBox5);
-            this.tabPage3.Controls.Add(this.comboBox2);
-            this.tabPage3.Controls.Add(this.label11);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(980, 509);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Wybierz domeny";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(283, 433);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 26);
+            this.textBox2.TabIndex = 6;
+            // 
+            // labelText
+            // 
+            this.labelText.AutoSize = true;
+            this.labelText.Location = new System.Drawing.Point(75, 439);
+            this.labelText.Name = "labelText";
+            this.labelText.Size = new System.Drawing.Size(128, 20);
+            this.labelText.TabIndex = 5;
+            this.labelText.Text = "Dodaj spoza listy";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(439, 466);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 37);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Wyślij";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "zabronione",
+            "dostępne"});
+            this.comboBox1.Location = new System.Drawing.Point(494, 19);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(227, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(234, 20);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Wybierz jakie procesy mają być: ";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.listBox3);
+            this.groupBox4.Location = new System.Drawing.Point(23, 56);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(577, 351);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Lista Procesów";
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 20;
+            this.listBox3.Location = new System.Drawing.Point(25, 27);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(523, 284);
+            this.listBox3.TabIndex = 2;
             // 
             // groupBox3
             // 
@@ -442,74 +492,46 @@
             this.listBoxClient2.Size = new System.Drawing.Size(279, 284);
             this.listBoxClient2.TabIndex = 2;
             // 
-            // groupBox4
+            // tabPage3
             // 
-            this.groupBox4.Controls.Add(this.listBox3);
-            this.groupBox4.Location = new System.Drawing.Point(23, 56);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(577, 351);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Lista Procesów";
+            this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.groupBox6);
+            this.tabPage3.Controls.Add(this.groupBox5);
+            this.tabPage3.Controls.Add(this.comboBox2);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(980, 509);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Wybierz domeny";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // listBox3
+            // label12
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 20;
-            this.listBox3.Location = new System.Drawing.Point(25, 27);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(523, 284);
-            this.listBox3.TabIndex = 2;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(293, 432);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(88, 20);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Z poza listy";
             // 
-            // label9
+            // textBox3
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(227, 24);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(234, 20);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Wybierz jakie procesy mają być: ";
+            this.textBox3.Location = new System.Drawing.Point(385, 424);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 26);
+            this.textBox3.TabIndex = 5;
             // 
-            // comboBox1
+            // button2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "zabronione",
-            "dostępne"});
-            this.comboBox1.Location = new System.Drawing.Point(494, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 3;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(256, 19);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(235, 20);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Wybierz jakie domeny mają być: ";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "zabronione",
-            "dostępne"});
-            this.comboBox2.Location = new System.Drawing.Point(497, 16);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 28);
-            this.comboBox2.TabIndex = 1;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.listBox5);
-            this.groupBox5.Location = new System.Drawing.Point(21, 63);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(588, 338);
-            this.groupBox5.TabIndex = 2;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Lista domen";
+            this.button2.Location = new System.Drawing.Point(749, 458);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(116, 36);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Wyślij";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -522,15 +544,6 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Klienci";
             // 
-            // listBoxClient3
-            // 
-            this.listBoxClient3.FormattingEnabled = true;
-            this.listBoxClient3.ItemHeight = 20;
-            this.listBoxClient3.Location = new System.Drawing.Point(18, 34);
-            this.listBoxClient3.Name = "listBoxClient3";
-            this.listBoxClient3.Size = new System.Drawing.Size(293, 264);
-            this.listBoxClient3.TabIndex = 0;
-            // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
@@ -541,6 +554,25 @@
             this.checkBox3.Text = "Wyślij do wszystkich";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
+            // listBoxClient3
+            // 
+            this.listBoxClient3.FormattingEnabled = true;
+            this.listBoxClient3.ItemHeight = 20;
+            this.listBoxClient3.Location = new System.Drawing.Point(18, 34);
+            this.listBoxClient3.Name = "listBoxClient3";
+            this.listBoxClient3.Size = new System.Drawing.Size(293, 264);
+            this.listBoxClient3.TabIndex = 0;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.listBox5);
+            this.groupBox5.Location = new System.Drawing.Point(21, 63);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(588, 338);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Lista domen";
+            // 
             // listBox5
             // 
             this.listBox5.FormattingEnabled = true;
@@ -550,55 +582,25 @@
             this.listBox5.Size = new System.Drawing.Size(518, 244);
             this.listBox5.TabIndex = 0;
             // 
-            // button1
+            // comboBox2
             // 
-            this.button1.Location = new System.Drawing.Point(439, 466);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 37);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Wyślij";
-            this.button1.UseVisualStyleBackColor = true;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "zabronione",
+            "dostępne"});
+            this.comboBox2.Location = new System.Drawing.Point(497, 16);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 28);
+            this.comboBox2.TabIndex = 1;
             // 
-            // button2
+            // label11
             // 
-            this.button2.Location = new System.Drawing.Point(749, 458);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 36);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Wyślij";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // labelText
-            // 
-            this.labelText.AutoSize = true;
-            this.labelText.Location = new System.Drawing.Point(75, 439);
-            this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(128, 20);
-            this.labelText.TabIndex = 5;
-            this.labelText.Text = "Dodaj spoza listy";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(283, 433);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 6;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(385, 424);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 26);
-            this.textBox3.TabIndex = 5;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(293, 432);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 20);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Z poza listy";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(256, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(235, 20);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Wybierz jakie domeny mają być: ";
             // 
             // tabPage4
             // 
@@ -610,6 +612,15 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Szczegóły klientów";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Location = new System.Drawing.Point(24, 40);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(626, 338);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "O kliencie";
             // 
             // groupBox7
             // 
@@ -630,14 +641,15 @@
             this.listBoxClient4.Size = new System.Drawing.Size(255, 284);
             this.listBoxClient4.TabIndex = 0;
             // 
-            // groupBox8
+            // button3
             // 
-            this.groupBox8.Location = new System.Drawing.Point(24, 40);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(626, 338);
-            this.groupBox8.TabIndex = 1;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "O kliencie";
+            this.button3.Location = new System.Drawing.Point(160, 437);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(132, 35);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "Zmień zakładke";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -659,14 +671,14 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -728,6 +740,7 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.ListBox listBoxClient4;
         private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button button3;
     }
 }
 
