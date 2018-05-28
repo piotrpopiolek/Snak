@@ -17,6 +17,7 @@ namespace Server_Snak
     public partial class Form1 : Form
     {
         ListaKlientow listaKlientow = new ListaKlientow();
+        string plik = "Work " + DateTime.Today.ToString("dd_MM_yyyy") + " " + DateTime.Now.ToString("HH-mm") + ".txt";
 
         public Form1()
         {
@@ -93,7 +94,8 @@ namespace Server_Snak
             }
             else
             {
-                this.listBoxConsole.Items.Add(tekst);
+                this.listBoxConsole.Items.Add(DateTime.Now.ToString("HH:mm:ss") + " " + tekst);
+                File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " " + tekst);
             }
         }
 
