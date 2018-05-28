@@ -36,21 +36,24 @@ namespace Server_Snak
             // Convert to string
             string adresLokalnyIP = ip.ToString();
 
-            label10.Text = "Adres IP serwera - " + adresLokalnyIP;
+            labelText.Text = "Adres IP serwera - " + adresLokalnyIP;
         }
 
         //Bezpieczne odwoływanie się z innego wątku do własności kontrolek
         delegate void SetTextCallBack(string tekst);
         private void SetText(string tekst)
         {
-            if (listBox1.InvokeRequired)
+            if (listBoxClient1.InvokeRequired)
             {
                 SetTextCallBack f = new SetTextCallBack(SetText);
                 this.Invoke(f, new object[] { tekst });
             }
             else
             {
-                this.listBox1.Items.Add(tekst);
+                this.listBoxClient1.Items.Add(tekst);
+                this.listBoxClient2.Items.Add(tekst);
+                this.listBoxClient3.Items.Add(tekst);
+                this.listBoxClient4.Items.Add(tekst);
             }
         }
 
@@ -99,14 +102,14 @@ namespace Server_Snak
         //Metoda pozwalająca bezpiecznie usunąć wpis z listy listBox1
         private void RemoveText(int pozycja)
         {
-            if (listBox1.InvokeRequired)
+            if (listBoxClient1.InvokeRequired)
             {
                 RemoveTextCallBack f = new RemoveTextCallBack(RemoveText);
                 this.Invoke(f, new object[] { pozycja });
             }
             else
             {
-                listBox1.Items.RemoveAt(pozycja);
+                listBoxClient1.Items.RemoveAt(pozycja);
             }
         }
 
@@ -150,7 +153,7 @@ namespace Server_Snak
                 if (cmd[0] == "HI")
                 {
                     this.SetTextConsole("Nowy klient o adresie IP: " + cmd[1] + " oraz nazwie - " + cmd[2]);
-                    foreach (string wpis in listBox1.Items)
+                    foreach (string wpis in listBoxClient1.Items)
                         if (wpis == cmd[1])
                         {
                             MessageBox.Show("Próba nawiązania połączenia z " + cmd[1] + " odrzucona, ponieważ na liście istnieje już taki klient");
@@ -244,8 +247,8 @@ namespace Server_Snak
                 if (cmd[0] == "BYE")
                 {
                     this.SetTextConsole("Klient o adresie IP: " + cmd[1] + " i nazwie"+ listaKlientow.IPDoNazwy(cmd[1]) +"rozłączył się.");
-                    for (int i = 0; i < listBox1.Items.Count; i++)
-                        if (listBox1.Items[i].ToString() == cmd[1])
+                    for (int i = 0; i < listBoxClient1.Items.Count; i++)
+                        if (listBoxClient1.Items[i].ToString() == cmd[1])
                             this.RemoveText(i);
                     listaKlientow.UsunKlienta(cmd[1]);
                 } else
@@ -261,7 +264,7 @@ namespace Server_Snak
             string commandArgument = textBoxNazwa.Text;
             string command = "";
 
-            if ((checkBox1.Checked == false) && listBox1.SelectedIndex == -1) return;
+            if ((checkBox1.Checked == false) && listBoxClient1.SelectedIndex == -1) return;
 
             try
             {
@@ -346,7 +349,7 @@ namespace Server_Snak
                 // DO KAZDEGO
                 if (checkBox1.Checked == true)
                 {
-                    foreach (string item in listBox1.Items)
+                    foreach (string item in listBoxClient1.Items)
                     {
                         string address = listaKlientow.NazwaDoIP(item);
 
@@ -359,7 +362,7 @@ namespace Server_Snak
                 } else
                 // TYLKO DO ZAZNACZONEGO
                 {
-                    foreach (string item in listBox1.SelectedItems)
+                    foreach (string item in listBoxClient1.SelectedItems)
                     {
                         string address = listaKlientow.NazwaDoIP(item);
 
