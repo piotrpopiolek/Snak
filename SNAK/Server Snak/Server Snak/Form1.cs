@@ -582,9 +582,6 @@ namespace Server_Snak
             {
                 MessageBox.Show("Błąd: Nie można nawiązać połączenia");
             }
-
-            // czyszczenie textboxa
-            textBoxNazwa.Text = "";
         }
     }
 }
