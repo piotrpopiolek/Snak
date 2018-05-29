@@ -1,0 +1,61 @@
+C:\Users\Lenovo\Desktop\Programowanie\C#\Server Snak\Server Snak\bin\Debug\Server Snak.exe.config
+C:\Users\Lenovo\Desktop\Programowanie\C#\Server Snak\Server Snak\bin\Debug\Server Snak.exe
+C:\Users\Lenovo\Desktop\Programowanie\C#\Server Snak\Server Snak\bin\Debug\Server Snak.pdb
+C:\Users\Lenovo\Desktop\Programowanie\C#\Server Snak\Server Snak\obj\Debug\Server Snak.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Desktop\Programowanie\C#\Server Snak\Server Snak\obj\Debug\Server_Snak.Form1.resources
+C:\Users\Lenovo\Desktop\Programowanie\C#\Server Snak\Server Snak\obj\Debug\Server_Snak.Properties.Resources.resources
+C:\Users\Lenovo\Desktop\Programowanie\C#\Server Snak\Server Snak\obj\Debug\Server Snak.csproj.GenerateResource.Cache
+C:\Users\Lenovo\Desktop\Programowanie\C#\Server Snak\Server Snak\obj\Debug\Server Snak.exe
+C:\Users\Lenovo\Desktop\Programowanie\C#\Server Snak\Server Snak\obj\Debug\Server Snak.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Server Snak\Server Snak\bin\Debug\Server Snak.exe.config
+C:\Users\Lenovo\Documents\GitHub\Snak\Server Snak\Server Snak\obj\Debug\Server Snak.exe
+C:\Users\Lenovo\Documents\GitHub\Snak\Server Snak\Server Snak\obj\Debug\Server Snak.pdb
+C:\Users\Maciej\Desktop\SNAK\Server Snak\Server Snak\bin\Debug\Server Snak.exe.config
+C:\Users\Maciej\Desktop\SNAK\Server Snak\Server Snak\bin\Debug\Server Snak.exe
+C:\Users\Maciej\Desktop\SNAK\Server Snak\Server Snak\bin\Debug\Server Snak.pdb
+C:\Users\Maciej\Desktop\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Desktop\SNAK\Server Snak\Server Snak\obj\Debug\Server_Snak.Form1.resources
+C:\Users\Maciej\Desktop\SNAK\Server Snak\Server Snak\obj\Debug\Server_Snak.Properties.Resources.resources
+C:\Users\Maciej\Desktop\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.csproj.GenerateResource.Cache
+C:\Users\Maciej\Desktop\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Desktop\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.exe
+C:\Users\Maciej\Desktop\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Server Snak\Server Snak\bin\Debug\Server Snak.exe.config
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Server Snak\Server Snak\obj\Debug\Server Snak.exe
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Server Snak\Server Snak\obj\Debug\Server Snak.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Server Snak\Server Snak\bin\Debug\Server Snak.exe
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Server Snak\Server Snak\bin\Debug\Server Snak.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Server Snak\Server Snak\obj\Debug\Server Snak.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Server Snak\Server Snak\obj\Debug\Server_Snak.Form1.resources
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Server Snak\Server Snak\obj\Debug\Server_Snak.Properties.Resources.resources
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Server Snak\Server Snak\obj\Debug\Server Snak.csproj.GenerateResource.Cache
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Server Snak\Server Snak\bin\Debug\Server Snak.exe.config
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Server Snak\Server Snak\bin\Debug\Server Snak.exe
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Server Snak\Server Snak\bin\Debug\Server Snak.pdb
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.csprojResolveAssemblyReference.cache
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Server Snak\Server Snak\obj\Debug\Server_Snak.Form1.resources
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Server Snak\Server Snak\obj\Debug\Server_Snak.Properties.Resources.resources
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.csproj.GenerateResource.Cache
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.csproj.CoreCompileInputs.cache
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.exe
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.pdb
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Server Snak\Server Snak\bin\Debug\Server Snak.exe.config
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Server Snak\Server Snak\bin\Debug\Server Snak.exe
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Server Snak\Server Snak\bin\Debug\Server Snak.pdb
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.csprojResolveAssemblyReference.cache
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server_Snak.Form1.resources
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server_Snak.Properties.Resources.resources
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.csproj.GenerateResource.Cache
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.csproj.CoreCompileInputs.cache
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.exe
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.pdb
+C:\Users\s0158291\Desktop\Snak-0.0.7\SNAK\Server Snak\Server Snak\bin\Debug\Server Snak.exe.config
+C:\Users\s0158291\Desktop\Snak-0.0.7\SNAK\Server Snak\Server Snak\bin\Debug\Server Snak.exe
+C:\Users\s0158291\Desktop\Snak-0.0.7\SNAK\Server Snak\Server Snak\bin\Debug\Server Snak.pdb
+C:\Users\s0158291\Desktop\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.csprojResolveAssemblyReference.cache
+C:\Users\s0158291\Desktop\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server_Snak.Form1.resources
+C:\Users\s0158291\Desktop\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server_Snak.Properties.Resources.resources
+C:\Users\s0158291\Desktop\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.csproj.GenerateResource.Cache
+C:\Users\s0158291\Desktop\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.csproj.CoreCompileInputs.cache
+C:\Users\s0158291\Desktop\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.exe
+C:\Users\s0158291\Desktop\Snak-0.0.7\SNAK\Server Snak\Server Snak\obj\Debug\Server Snak.pdb
