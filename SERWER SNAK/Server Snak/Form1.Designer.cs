@@ -46,13 +46,13 @@
             this.buttonAddDomenToList = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxAddDomenToList = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonSendCommandDomena = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.listBoxClient3 = new System.Windows.Forms.ListBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.listBoxDomens = new System.Windows.Forms.ListBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxChange2 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.comboBoxMode1 = new System.Windows.Forms.ComboBox();
@@ -95,6 +95,10 @@
             this.comboBoxChange = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.listBoxBannedDomenaAK = new System.Windows.Forms.ListBox();
+            this.listBoxBannedDomenaPA = new System.Windows.Forms.ListBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabPage4.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -226,13 +230,15 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.comboBox1);
+            this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Controls.Add(this.buttonAddDomenToList);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.textBoxAddDomenToList);
-            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.buttonSendCommandDomena);
             this.tabPage3.Controls.Add(this.groupBox6);
             this.tabPage3.Controls.Add(this.groupBox5);
-            this.tabPage3.Controls.Add(this.comboBox2);
+            this.tabPage3.Controls.Add(this.comboBoxChange2);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
@@ -271,25 +277,26 @@
             this.textBoxAddDomenToList.Size = new System.Drawing.Size(68, 20);
             this.textBoxAddDomenToList.TabIndex = 5;
             // 
-            // button2
+            // buttonSendCommandDomena
             // 
-            this.button2.Location = new System.Drawing.Point(499, 298);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(77, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Wyślij";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonSendCommandDomena.Location = new System.Drawing.Point(297, 301);
+            this.buttonSendCommandDomena.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSendCommandDomena.Name = "buttonSendCommandDomena";
+            this.buttonSendCommandDomena.Size = new System.Drawing.Size(77, 23);
+            this.buttonSendCommandDomena.TabIndex = 4;
+            this.buttonSendCommandDomena.Text = "Wyślij";
+            this.buttonSendCommandDomena.UseVisualStyleBackColor = true;
+            this.buttonSendCommandDomena.Click += new System.EventHandler(this.buttonSendCommandDomena_Click);
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.checkBox3);
             this.groupBox6.Controls.Add(this.listBoxClient3);
-            this.groupBox6.Location = new System.Drawing.Point(420, 41);
+            this.groupBox6.Location = new System.Drawing.Point(576, 36);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Size = new System.Drawing.Size(217, 220);
+            this.groupBox6.Size = new System.Drawing.Size(239, 228);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Klienci";
@@ -297,31 +304,35 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(12, 198);
+            this.checkBox3.Location = new System.Drawing.Point(23, 207);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(122, 17);
             this.checkBox3.TabIndex = 1;
             this.checkBox3.Text = "Wyślij do wszystkich";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // listBoxClient3
             // 
             this.listBoxClient3.FormattingEnabled = true;
-            this.listBoxClient3.Location = new System.Drawing.Point(12, 22);
+            this.listBoxClient3.Location = new System.Drawing.Point(13, 17);
             this.listBoxClient3.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxClient3.Name = "listBoxClient3";
-            this.listBoxClient3.Size = new System.Drawing.Size(197, 173);
+            this.listBoxClient3.Size = new System.Drawing.Size(187, 186);
             this.listBoxClient3.TabIndex = 0;
+            this.listBoxClient3.SelectedIndexChanged += new System.EventHandler(this.listBoxClient3_SelectedIndexChanged);
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.listBoxBannedDomenaPA);
+            this.groupBox5.Controls.Add(this.listBoxBannedDomenaAK);
             this.groupBox5.Controls.Add(this.listBoxDomens);
-            this.groupBox5.Location = new System.Drawing.Point(14, 41);
+            this.groupBox5.Location = new System.Drawing.Point(15, 36);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(392, 220);
+            this.groupBox5.Size = new System.Drawing.Size(557, 228);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Lista domen";
@@ -329,28 +340,28 @@
             // listBoxDomens
             // 
             this.listBoxDomens.FormattingEnabled = true;
-            this.listBoxDomens.Location = new System.Drawing.Point(13, 35);
+            this.listBoxDomens.Location = new System.Drawing.Point(17, 18);
             this.listBoxDomens.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxDomens.Name = "listBoxDomens";
-            this.listBoxDomens.Size = new System.Drawing.Size(347, 160);
+            this.listBoxDomens.Size = new System.Drawing.Size(144, 186);
             this.listBoxDomens.TabIndex = 0;
             // 
-            // comboBox2
+            // comboBoxChange2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBoxChange2.FormattingEnabled = true;
+            this.comboBoxChange2.Items.AddRange(new object[] {
             "zabronione",
             "dostępne"});
-            this.comboBox2.Location = new System.Drawing.Point(331, 10);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(82, 21);
-            this.comboBox2.TabIndex = 1;
+            this.comboBoxChange2.Location = new System.Drawing.Point(414, 14);
+            this.comboBoxChange2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxChange2.Name = "comboBoxChange2";
+            this.comboBoxChange2.Size = new System.Drawing.Size(82, 21);
+            this.comboBoxChange2.TabIndex = 1;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(171, 12);
+            this.label11.Location = new System.Drawing.Point(254, 16);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(161, 13);
@@ -826,12 +837,51 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(11, 8);
+            this.tabControl1.Location = new System.Drawing.Point(13, 17);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(841, 352);
             this.tabControl1.TabIndex = 18;
+            // 
+            // listBoxBannedDomenaAK
+            // 
+            this.listBoxBannedDomenaAK.FormattingEnabled = true;
+            this.listBoxBannedDomenaAK.Location = new System.Drawing.Point(207, 18);
+            this.listBoxBannedDomenaAK.Name = "listBoxBannedDomenaAK";
+            this.listBoxBannedDomenaAK.Size = new System.Drawing.Size(121, 186);
+            this.listBoxBannedDomenaAK.TabIndex = 4;
+            // 
+            // listBoxBannedDomenaPA
+            // 
+            this.listBoxBannedDomenaPA.FormattingEnabled = true;
+            this.listBoxBannedDomenaPA.Location = new System.Drawing.Point(383, 17);
+            this.listBoxBannedDomenaPA.Name = "listBoxBannedDomenaPA";
+            this.listBoxBannedDomenaPA.Size = new System.Drawing.Size(120, 186);
+            this.listBoxBannedDomenaPA.TabIndex = 12;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(33, 16);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(60, 13);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "Tryb pracy:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Aktywny",
+            "Pasywny"});
+            this.comboBox1.Location = new System.Drawing.Point(93, 14);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(82, 21);
+            this.comboBox1.TabIndex = 11;
+            this.comboBox1.Text = "Aktywny";
             // 
             // Form1
             // 
@@ -889,13 +939,13 @@
         private System.Windows.Forms.Button buttonAddDomenToList;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxAddDomenToList;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonSendCommandDomena;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.ListBox listBoxClient3;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ListBox listBoxDomens;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxChange2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button buttonAddProcesToList;
@@ -938,6 +988,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ListBox listBoxBannedAK;
         private System.Windows.Forms.ListBox listBoxBannedPA;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ListBox listBoxBannedDomenaPA;
+        private System.Windows.Forms.ListBox listBoxBannedDomenaAK;
     }
 }
 

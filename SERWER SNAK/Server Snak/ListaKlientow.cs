@@ -94,24 +94,46 @@ namespace Server_Snak
             }
         }
 
-        public void dodajDomeneAktywna(string nazwaKlienta, string nazwaProcesu)
+        public void dodajDomeneAktywna(string nazwaKlienta, string nazwaDomeny)
         {
             foreach (Klient klient in listaKlientow)
             {
                 if (klient.Nazwa() == nazwaKlienta)
                 {
-                    klient.DodajDomeneAktywna(nazwaKlienta);
+                    klient.DodajDomeneAktywna(nazwaDomeny);
                 }
             }
         }
 
-        public void dodajDomenePasywna(string nazwaKlienta, string nazwaProcesu)
+        public void usunDomeneAktywna(string nazwaKlienta, string nazwaDomeny)
         {
             foreach (Klient klient in listaKlientow)
             {
                 if (klient.Nazwa() == nazwaKlienta)
                 {
-                    klient.DodajDomenePasywna(nazwaKlienta);
+                    klient.UsunDomeneAktywna(nazwaDomeny);
+                }
+            }
+        }
+
+        public void dodajDomenePasywna(string nazwaKlienta, string nazwaDomeny)
+        {
+            foreach (Klient klient in listaKlientow)
+            {
+                if (klient.Nazwa() == nazwaKlienta)
+                {
+                    klient.DodajDomenePasywna(nazwaDomeny);
+                }
+            }
+        }
+
+        public void usunDomenePasywna(string nazwaKlienta, string nazwaDomeny)
+        {
+            foreach (Klient klient in listaKlientow)
+            {
+                if (klient.Nazwa() == nazwaKlienta)
+                {
+                    klient.UsunDomenePasywna(nazwaDomeny);
                 }
             }
         }
@@ -152,7 +174,7 @@ namespace Server_Snak
             return null;
         }
 
-        public string[] zwrocListeDomenyPasywny(string nazwaKlienta)
+        public string[] zwrocListeDomenyPasywne(string nazwaKlienta)
         {
             foreach (Klient klient in listaKlientow)
             {

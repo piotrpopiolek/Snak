@@ -79,3 +79,13 @@ C:\Users\Maciej\Desktop\Server Snak\Server Snak\obj\Debug\Server Snak.csproj.Gen
 C:\Users\Maciej\Desktop\Server Snak\Server Snak\obj\Debug\Server Snak.csproj.CoreCompileInputs.cache
 C:\Users\Maciej\Desktop\Server Snak\Server Snak\obj\Debug\Server Snak.exe
 C:\Users\Maciej\Desktop\Server Snak\Server Snak\obj\Debug\Server Snak.pdb
+C:\Users\Maciej\Desktop\SERWER SNAK\Server Snak\bin\Debug\Server Snak.exe.config
+C:\Users\Maciej\Desktop\SERWER SNAK\Server Snak\bin\Debug\Server Snak.exe
+C:\Users\Maciej\Desktop\SERWER SNAK\Server Snak\bin\Debug\Server Snak.pdb
+C:\Users\Maciej\Desktop\SERWER SNAK\Server Snak\obj\Debug\Server Snak.csprojAssemblyReference.cache
+C:\Users\Maciej\Desktop\SERWER SNAK\Server Snak\obj\Debug\Server_Snak.Form1.resources
+C:\Users\Maciej\Desktop\SERWER SNAK\Server Snak\obj\Debug\Server_Snak.Properties.Resources.resources
+C:\Users\Maciej\Desktop\SERWER SNAK\Server Snak\obj\Debug\Server Snak.csproj.GenerateResource.cache
+C:\Users\Maciej\Desktop\SERWER SNAK\Server Snak\obj\Debug\Server Snak.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Desktop\SERWER SNAK\Server Snak\obj\Debug\Server Snak.exe
+C:\Users\Maciej\Desktop\SERWER SNAK\Server Snak\obj\Debug\Server Snak.pdb

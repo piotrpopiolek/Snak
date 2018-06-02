@@ -189,20 +189,24 @@ namespace Server_Snak
                     // TUTAJ PO OTRZYMANIU POTWIERDZENIA O WYKONANJE AKCJI USTAWIAMY LISTBOXY
                     if (cmd[2] == "ADD")
                     {
+                        string nazwaKlienta = listaKlientow.IPDoNazwy(cmd[1]);
+                        string nazwaBlokady = cmd[5];
                         // komunikat o firewallu
                         if (cmd[3] == "FW")
                         {
                             if (cmd[4] == "PA")
                             {
                                 // DODANIE DO FIREWALLA W TRYBIE PASYWNYM
-                                string text = listaKlientow.IPDoNazwy(cmd[1]) + ":PA:" + cmd[5];
+                                string text = nazwaKlienta + ":PA:" + nazwaBlokady;
                                 this.SetTextDomena(text);
+                                listaKlientow.dodajDomenePasywna(nazwaKlienta, nazwaBlokady);
                             }
                             else if (cmd[4] == "AK")
                             {
                                 // DODANIE DO FIREWALLA W TRYBIE AKTYWNYM
-                                string text = listaKlientow.IPDoNazwy(cmd[1]) + ":AK:" + cmd[5];
+                                string text = nazwaKlienta + ":AK:" + nazwaBlokady;
                                 this.SetTextDomena(text);
+                                listaKlientow.dodajDomeneAktywna(nazwaKlienta, nazwaBlokady);
                             }
                             else
                             {
@@ -212,22 +216,19 @@ namespace Server_Snak
                         // komunikat o procesie
                         else if (cmd[3] == "PS")
                         {
-                            string nazwaKlienta = listaKlientow.IPDoNazwy(cmd[1]);
-                            string nazwaProcesu = cmd[5];
-
                             if (cmd[4] == "PA")
                             {
                                 // DODANIE PROCESU W TRYBIE PASYWNYM
-                                string text = nazwaKlienta + ":PA:" + nazwaProcesu;
+                                string text = nazwaKlienta + ":PA:" + nazwaBlokady;
                                 //this.SetTextProces(text);
-                                listaKlientow.dodajProcesPasywny(nazwaKlienta, nazwaProcesu);
+                                listaKlientow.dodajProcesPasywny(nazwaKlienta, nazwaBlokady);
                             }
                             else if (cmd[4] == "AK")
                             {
                                 // DODANIE PROCESU W TRYBIE AKTYWNYM
-                                string text = listaKlientow.IPDoNazwy(nazwaKlienta + ":AK:" + nazwaProcesu);
+                                string text = nazwaKlienta + ":AK:" + nazwaBlokady;
                                 //this.SetTextProces(text);
-                                listaKlientow.dodajProcesAktywny(nazwaKlienta, nazwaProcesu);
+                                listaKlientow.dodajProcesAktywny(nazwaKlienta, nazwaBlokady);
                             }
                             else
                             {
@@ -243,29 +244,42 @@ namespace Server_Snak
                     }
                     else if (cmd[2] == "DEL")
                     {
+                        string nazwaKlienta = listaKlientow.IPDoNazwy(cmd[1]);
+                        string nazwaBlokady = cmd[5];
                         // usuwanie
                         if (cmd[3] == "FW")
-                        {
-                            // USUNIECIE DOMENY Z FIREWALLA
-                            //int pozycja = listBoxDomena.Items.IndexOf(cmd[4]);
-                            //RemoveTextDomena(pozycja);
+                        {                            
+                            if (cmd[4] == "AK")
+                            {
+                                // USUNIECIE DOMENY Z FIREWALLA W TRYBIE AKTYWNYM
+                                listaKlientow.usunDomeneAktywna(nazwaKlienta, nazwaBlokady);
+
+                                updateBannedListboxes();
+                            } else if (cmd[4] == "PA")
+                            {
+                                // USUNIECIE DOMENY Z FIREWALLA W TRYBIE PASYWNYM
+                                listaKlientow.usunDomenePasywna(nazwaKlienta, nazwaBlokady);
+
+                                updateBannedListboxes();
+                            } else
+                            {
+                                this.SetTextConsole("Otrzymano nieznany komunikat");
+                            }
                         }
                         else if (cmd[3] == "PS")
                         {
-                            string nazwaKlienta = listaKlientow.IPDoNazwy(cmd[1]);
-                            string nazwaProcesu = cmd[5];
                             if (cmd[4] == "AK")
                             {
                                 // USUNIECIE PROCESU W TRYBIE AKTYWNYM
 
-                                listaKlientow.usunProcesAktywny(nazwaKlienta, nazwaProcesu);
+                                listaKlientow.usunProcesAktywny(nazwaKlienta, nazwaBlokady);
 
                                 updateBannedListboxes();
                             } else if (cmd[4] == "PA")
                             {
                                 // USUNIECIE PROCESU W TRYBIE PASYWNYM
 
-                                listaKlientow.usunProcesPasywny(nazwaKlienta, nazwaProcesu);
+                                listaKlientow.usunProcesPasywny(nazwaKlienta, nazwaBlokady);
 
                                 updateBannedListboxes();
                             } else
@@ -651,6 +665,15 @@ namespace Server_Snak
             {
                 if (listBoxClient2.SelectedIndex == -1) { return; }
                 updateBannedListboxes();
+
+                // Zmiana listboxa3 na to samo co ma 2
+                if (listBoxClient2.SelectedIndex != listBoxClient3.SelectedIndex)
+                {
+                    listBoxClient3.Invoke(new Action(delegate ()
+                    {
+                        listBoxClient3.SelectedIndex = listBoxClient2.SelectedIndex;
+                    }));
+                }
             }
         }
 
@@ -664,6 +687,23 @@ namespace Server_Snak
                 {
                     listBoxClient2.SelectedIndex = -1;
                 }));
+
+                if (checkBox3.Checked == false)
+                {
+                    checkBox3.Invoke(new Action(delegate ()
+                    {
+                        checkBox3.Checked = true;
+                    }));
+                }
+            } else
+            {
+                if (checkBox3.Checked)
+                {
+                    checkBox3.Invoke(new Action(delegate ()
+                    {
+                        checkBox3.Checked = false;
+                    }));
+                }
             }
         }
 
@@ -686,9 +726,19 @@ namespace Server_Snak
                 listBoxBannedAK.Items.Clear();
             }));
 
-            listBoxBannedAK.Invoke(new Action(delegate ()
+            listBoxBannedPA.Invoke(new Action(delegate ()
             {
                 listBoxBannedPA.Items.Clear();
+            }));
+
+            listBoxBannedDomenaAK.Invoke(new Action(delegate ()
+            {
+                listBoxBannedDomenaAK.Items.Clear();
+            }));
+
+            listBoxBannedDomenaPA.Invoke(new Action(delegate ()
+            {
+                listBoxBannedDomenaPA.Items.Clear();
             }));
 
             if (checkBox2.Checked == true)
@@ -702,6 +752,11 @@ namespace Server_Snak
 
         void updateBannedListboxesOne()
         {
+            listBoxClient2.Invoke(new Action(delegate ()
+            {
+                if (listBoxClient2.SelectedIndex == -1) return;
+            }));
+
             string clientName = "";
 
             listBoxClient2.Invoke(new Action(delegate ()
@@ -709,6 +764,7 @@ namespace Server_Snak
                 clientName = listBoxClient2.SelectedItem.ToString();
             }));
 
+            // Procesy
             foreach (string item in listaKlientow.zwrocListeProcesyAktywne(clientName))
             {
                 listBoxBannedAK.Invoke(new Action(delegate ()
@@ -723,10 +779,32 @@ namespace Server_Snak
                     listBoxBannedPA.Items.Add(item);
                 }));
             }
+
+            //Domeny
+            foreach (string item in listaKlientow.zwrocListeDomenyAktywne(clientName))
+            {
+                listBoxBannedDomenaAK.Invoke(new Action(delegate ()
+                {
+                    listBoxBannedDomenaAK.Items.Add(item);
+                }));
+            }
+            foreach (string item in listaKlientow.zwrocListeDomenyPasywne(clientName))
+            {
+                listBoxBannedPA.Invoke(new Action(delegate ()
+                {
+                    listBoxBannedDomenaPA.Items.Add(item);
+                }));
+            }
         }
 
         void updateBannedListoxesALL()
         {
+            checkBox2.Invoke(new Action(delegate ()
+            {
+                if (checkBox2.Checked == false) return;
+            }));
+
+            // Procesy
             foreach (string item in zabronioneDlaWszystkich.zablokowane_procesy_aktywny)
             {
                 listBoxBannedAK.Invoke(new Action(delegate ()
@@ -741,11 +819,211 @@ namespace Server_Snak
                     listBoxBannedPA.Items.Add(item);
                 }));
             }
+
+            //Domeny
+            foreach (string item in zabronioneDlaWszystkich.zablokowane_domeny_aktywny)
+            {
+                listBoxBannedAK.Invoke(new Action(delegate ()
+                {
+                    listBoxBannedDomenaAK.Items.Add(item);
+                }));
+            }
+            foreach (string item in zabronioneDlaWszystkich.zablokowane_domeny_pasywny)
+            {
+                listBoxBannedPA.Invoke(new Action(delegate ()
+                {
+                    listBoxBannedDomenaPA.Items.Add(item);
+                }));
+            }
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                if (checkBox2.Checked == false)
+                {
+                    checkBox2.Invoke(new Action(delegate ()
+                    {
+                        checkBox2.Checked = true;
+                    }));
+                }
+                listBoxClient3.Invoke(new Action(delegate ()
+                {
+                    listBoxClient3.SelectedIndex = -1;
+                }));
+
+            } else
+            {
+                if (checkBox2.Checked == true)
+                {
+                    checkBox2.Invoke(new Action(delegate ()
+                    {
+                        checkBox2.Checked = false;
+                    }));
+                }
+            }
+        }
+
+        private void listBoxClient3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked == true)
+            {
+                listBoxClient3.Invoke(new Action(delegate ()
+                {
+                    listBoxClient3.SelectedIndex = -1;
+                }));
+
+                updateBannedListboxes();
+
+                return;
+            }
+            else
+            {
+                if (listBoxClient3.SelectedIndex == -1) { return; }
+
+                if (listBoxClient2.SelectedIndex != listBoxClient3.SelectedIndex)
+                {
+                    listBoxClient2.Invoke(new Action(delegate ()
+                    {
+                        listBoxClient2.SelectedIndex = listBoxClient3.SelectedIndex;
+                    }));
+                }
+                updateBannedListboxes();
+            }
+        }
+
+        private void buttonSendCommandDomena_Click(object sender, EventArgs e)
+        {
+            //Do dopisania usuwanie blokad
+            string commandArgument = "";
+            string command = "";
+
+            bool aktywny = false;
+
+            if ((checkBox3.Checked == false) && listBoxClient3.SelectedIndex == -1) return;
+
+            try
+            {
+                // DODAWANIE BLOKAD
+                if (comboBoxChange2.Text == "zabronione")
+                {
+                    // aktywny
+                    if (comboBox1.Text == "Aktywny")
+                    {
+                        // DODAJ PROCES W TRYBIE AKTYWNYM                            
+                        command = "ADD:FW:AK";
+                        aktywny = true;
+
+                    }
+                    else
+                    {
+                        command = "ADD:FW:PA";
+                        aktywny = false;
+                    }
+                    // Argumenty
+                    foreach (string item in listBoxDomens.SelectedItems)
+                    {
+
+                        //WYSYLANIEWIELU
+                        //commandArgument = commandArgument + item + ";";
+
+                        commandArgument = item;
+
+                        if (checkBox3.Checked == true)
+                        {
+                            if (aktywny)
+                            {
+                                zabronioneDlaWszystkich.zablokowane_domeny_aktywny.Add(item);
+                            }
+                            else
+                            {
+                                zabronioneDlaWszystkich.zablokowane_domeny_pasywny.Add(item);
+                            }
+                            updateBannedListboxes();
+                        }
+                        else
+                        {
+                            // zaimplementowane po otrzymaniu komendy 
+                        }
+                    }
+                }
+                // USUWANIE BLOKAD
+                else
+                {
+                    if (listBoxBannedDomenaAK.SelectedIndex != -1)
+                    {
+                        // PROCES AKTYWNY
+                        command = "DEL:FW:AK";
+                        string cmd = listBoxBannedDomenaAK.SelectedItem.ToString();
+                        //string[] cmd = listBoxBannedAK.SelectedItem.ToString().Split(new char[] { ':' });
+                        commandArgument = cmd;
+                    }
+                    else if (listBoxBannedDomenaPA.SelectedIndex != -1)
+                    {
+                        // PROCES AKTYWNY
+                        command = "DEL:FW:PA";
+                        string cmd = listBoxBannedDomenaPA.SelectedItem.ToString();
+                        //string[] cmd = listBoxBannedAK.SelectedItem.ToString().Split(new char[] { ':' });
+                        commandArgument = cmd;
+                    } else
+                    {
+                        // ERROR
+                        //this.SetText("ERROR");
+                    }
+                }
+
+                //##########
+
+                // WYSYLANIE KOMUNIKATU
+
+                // DO KAZDEGO
+                if (checkBox2.Checked == true)
+                {
+                    foreach (string item in listBoxClient2.Items)
+                    {
+                        string address = listaKlientow.NazwaDoIP(item);
+
+                        TcpClient klient = new TcpClient(address, 1978);
+                        NetworkStream ns = klient.GetStream();
+
+                        byte[] bufor = Encoding.ASCII.GetBytes(command + ":" + commandArgument + ":");
+                        ns.Write(bufor, 0, bufor.Length);
+                    }
+                }
+                else
+                // TYLKO DO ZAZNACZONEGO
+                {
+                    foreach (string item in listBoxClient2.SelectedItems)
+                    {
+                        string address = listaKlientow.NazwaDoIP(item);
+
+                        TcpClient klient = new TcpClient(address, 1978);
+                        NetworkStream ns = klient.GetStream();
+
+                        byte[] bufor = Encoding.ASCII.GetBytes(command + ":" + commandArgument + ":");
+                        ns.Write(bufor, 0, bufor.Length);
+                    }
+                }
+
+                //##########
+
+                if (backgroundWorker1.IsBusy == false)
+                    backgroundWorker1.RunWorkerAsync();
+                else
+                {
+                    //MessageBox.Show("Błąd: backgroundWorker1.IsBusy == false");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Błąd: Nie można nawiązać połączenia");
+            }
         }
     }
 }
