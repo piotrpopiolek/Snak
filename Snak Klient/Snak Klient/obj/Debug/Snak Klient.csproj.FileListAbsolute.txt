@@ -1,0 +1,86 @@
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe.config
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\bin\Debug\Snak Klient.pdb
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Form1.resources
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Properties.Resources.resources
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.GenerateResource.Cache
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\obj\Debug\Snak Klient.exe
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\obj\Debug\Snak Klient.pdb
+C:\Users\Lenovo\Desktop\Programowanie\C#\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Form1.resources
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Properties.Resources.resources
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.GenerateResource.Cache
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.exe
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.pdb
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Interop.NETCONLib.dll
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Interop.NetFwTypeLib.dll
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.ResolveComReference.cache
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe.config
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe
+C:\Users\Maciej\Desktop\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe.config
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak Klient\Snak Klient\obj\Debug\Interop.NETCONLib.dll
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak Klient\Snak Klient\obj\Debug\Interop.NetFwTypeLib.dll
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.ResolveComReference.cache
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak Klient\Snak Klient\obj\Debug\Snak Klient.exe
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak Klient\Snak Klient\obj\Debug\Snak Klient.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak Klient\Snak Klient\bin\Debug\Snak Klient.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Form1.resources
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Properties.Resources.resources
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.GenerateResource.Cache
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe.config
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.pdb
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csprojResolveAssemblyReference.cache
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Snak Klient\Snak Klient\obj\Debug\Interop.NETCONLib.dll
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Snak Klient\Snak Klient\obj\Debug\Interop.NetFwTypeLib.dll
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.ResolveComReference.cache
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Form1.resources
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Properties.Resources.resources
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.GenerateResource.Cache
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.CoreCompileInputs.cache
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.exe
+C:\Users\s0158317\Desktop\Snak-0.0.5\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.pdb
+C:\Users\s0158317\Desktop\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe.config
+C:\Users\s0158317\Desktop\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe
+C:\Users\s0158317\Desktop\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.pdb
+C:\Users\s0158317\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csprojResolveAssemblyReference.cache
+C:\Users\s0158317\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Interop.NETCONLib.dll
+C:\Users\s0158317\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Interop.NetFwTypeLib.dll
+C:\Users\s0158317\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.ResolveComReference.cache
+C:\Users\s0158317\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Form1.resources
+C:\Users\s0158317\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Properties.Resources.resources
+C:\Users\s0158317\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.GenerateResource.Cache
+C:\Users\s0158317\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.CoreCompileInputs.cache
+C:\Users\s0158317\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.exe
+C:\Users\s0158317\Desktop\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.pdb
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe.config
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Snak Klient\Snak Klient\bin\Debug\Snak Klient.pdb
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csprojResolveAssemblyReference.cache
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Snak Klient\Snak Klient\obj\Debug\Interop.NETCONLib.dll
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Snak Klient\Snak Klient\obj\Debug\Interop.NetFwTypeLib.dll
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.ResolveComReference.cache
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Form1.resources
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Properties.Resources.resources
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.GenerateResource.Cache
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.CoreCompileInputs.cache
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.exe
+C:\Users\s0145667\Downloads\Snak-0.0.7\Snak-0.0.7\SNAK\Snak Klient\Snak Klient\obj\Debug\Snak Klient.pdb
+C:\Users\Maciej\Desktop\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe.config
+C:\Users\Maciej\Desktop\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe
+C:\Users\Maciej\Desktop\Snak Klient\Snak Klient\bin\Debug\Snak Klient.pdb
+C:\Users\Maciej\Desktop\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csprojAssemblyReference.cache
+C:\Users\Maciej\Desktop\Snak Klient\Snak Klient\obj\Debug\Interop.NETCONLib.dll
+C:\Users\Maciej\Desktop\Snak Klient\Snak Klient\obj\Debug\Interop.NetFwTypeLib.dll
+C:\Users\Maciej\Desktop\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.ResolveComReference.cache
+C:\Users\Maciej\Desktop\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Form1.resources
+C:\Users\Maciej\Desktop\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Properties.Resources.resources
+C:\Users\Maciej\Desktop\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.GenerateResource.cache
+C:\Users\Maciej\Desktop\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Desktop\Snak Klient\Snak Klient\obj\Debug\Snak Klient.exe
+C:\Users\Maciej\Desktop\Snak Klient\Snak Klient\obj\Debug\Snak Klient.pdb
