@@ -1,0 +1,9 @@
+netbeans
+calculator
+firefox
+cmd
+chrome
+VSHub
+notepad++
+calculator
+
