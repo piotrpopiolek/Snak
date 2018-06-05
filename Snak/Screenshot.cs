@@ -30,7 +30,6 @@ namespace Antycheat
                     ImageCodecInfo jpegCodec = GetEncoderInfo("image/jpeg");
                     Image image = new Bitmap(bmp);
                     Byte[] imageInBytes = imageToByteArray(image, jpegCodec, encoderParams);
-
                 }
                 Thread.Sleep(50);
             }
@@ -58,10 +57,8 @@ namespace Antycheat
 
         public static Image byteArrayToImage(byte[] bytes)
         {
-            using (var ms = new MemoryStream(bytes))
-            {
-                return Image.FromStream(ms);
-            }
+            MemoryStream ms = new MemoryStream(bytes);
+            return Image.FromStream(ms);
         }
 
         private static EncoderParameters GetEncoderParameters(int quality)
