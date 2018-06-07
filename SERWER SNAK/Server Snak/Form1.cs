@@ -91,6 +91,7 @@ namespace Server_Snak
                 Byte[] bufor = klient.Receive(ref zdalnyIP);
                 string dane = Encoding.ASCII.GetString(bufor);
                 string[] cmd = dane.Split(new char[] { ':' });
+                File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " " + dane + "\n");
                 if (cmd[0] == "HI")
                 {
                     foreach (string wpis in listBoxClient2.Items)
@@ -269,6 +270,7 @@ namespace Server_Snak
         private void buttonAddProcesToList_Click(object sender, EventArgs e)
         {
             File.AppendAllText(listProcessFile, textBoxAddProcesToList.Text + "\n");
+            listBoxProcesses.DataSource = File.ReadAllLines(listProcessFile);
             //Podczas dodawania ma się też od razu wysłać jako rozkaz do klientów
             //na liscie przykładowych procesów pojawi się po restarcie serwera.
         }
@@ -276,6 +278,7 @@ namespace Server_Snak
         private void buttonAddDomenToList_Click(object sender, EventArgs e)
         {
             File.AppendAllText(listDomensFile, textBoxAddDomenToList.Text + "\n");
+            listBoxDomens.DataSource = File.ReadAllLines(listDomensFile);
             //Podczas dodawania ma się też od razu wysłać jako rozkaz do klientów
             //na liscie przykładowych domen pojawi się po restarcie serwera.
         }

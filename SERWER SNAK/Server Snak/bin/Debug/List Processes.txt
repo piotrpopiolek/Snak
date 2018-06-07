@@ -6,4 +6,5 @@ chrome
 VSHub
 notepad++
 calculator
-
+steam
+netbeans64
