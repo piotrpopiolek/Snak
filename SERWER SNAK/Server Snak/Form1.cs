@@ -12,6 +12,8 @@ using System.Net.Sockets;
 using System.Net;
 using System.IO;
 
+using Antycheat;
+
 namespace Server_Snak
 {
     public partial class Form1 : Form
@@ -24,6 +26,8 @@ namespace Server_Snak
 
         public delegate void SetTextCallBack(string tekst);
         public delegate void UpdateLisboxes();
+
+        public string address = "127.0.0.1";
 
         public Form1()
         {
@@ -223,7 +227,16 @@ namespace Server_Snak
                 {
                     // NARUSZENIE
                 }
-                else
+                else if (cmd[0] == "SCR")
+                {
+                    // wyswietlanie 
+                    byte[] screen = Encoding.ASCII.GetBytes(cmd[1]);
+
+
+                    //pictureBox1.Image = 
+                    Screenshot.byteArrayToImage(screen);
+
+                } else
                 if (cmd[0] == "BYE")
                 {
                     string nazwa = listaKlientow.IPDoNazwy(cmd[1]);
@@ -235,8 +248,12 @@ namespace Server_Snak
 
                     checkBox2.Invoke(new Action(delegate ()
                     {
-                        checkBox2.Checked = true;                    }));
+                        checkBox2.Checked = true;
+                    }));
                     updateBannedListboxes();
+                } else
+                {
+                    MessageBox.Show("cos sie cos sie zepsulo");
                 }
             }
         }
@@ -610,6 +627,13 @@ namespace Server_Snak
                     listBoxBanDomensPA.Items.Add(item);
                 }));
             }
+
+            listBoxClient2.Invoke(new Action(delegate ()
+            {
+                address = listaKlientow.NazwaDoIP(listBoxClient2.SelectedItem.ToString());
+            }));
+
+            wyslijWiadomosc("SCRSTART:");
         }
 
         void updateBannedListoxesALL()
@@ -666,6 +690,8 @@ namespace Server_Snak
                     listBoxBanDomensPA.Items.Add(item);
                 }));
             }
+
+            wyslijWiadomosc("SCRSTOP:");
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -927,6 +953,22 @@ namespace Server_Snak
                     }));
                 }
                 updateBannedListboxes();
+            }
+        }
+
+        void wyslijWiadomosc(string command)
+        {
+            try
+            {
+                TcpClient klient = new TcpClient(address, 1978);
+                NetworkStream ns = klient.GetStream();
+
+                byte[] bufor = Encoding.ASCII.GetBytes(command);
+                ns.Write(bufor, 0, bufor.Length);
+            }
+            catch (Exception)
+            {
+                // nie wiem po co to
             }
         }
     }

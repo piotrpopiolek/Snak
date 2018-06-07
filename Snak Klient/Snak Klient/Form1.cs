@@ -14,6 +14,9 @@ using System.Net.Sockets;
 using System.Net;
 using System.IO;
 
+using Antycheat;
+using System.Threading;
+
 namespace Snak_Klient
 {
     public partial class Form1 : Form
@@ -25,6 +28,11 @@ namespace Snak_Klient
 
         FirewallController firewallController;
         ProcessManagement processController;
+
+        bool screen = false;
+
+        Thread screenThread = new Thread(new ThreadStart(Screenshot.startPreview));
+
         public Form1()
         {
             InitializeComponent();
@@ -187,9 +195,27 @@ namespace Snak_Klient
                         this.SetText("Unknown command recieved");
                     }
                 }
-                else
+                else if (cmd[0] == "SCRSTART")
+                {
+                    // screeny start
+                    if (screen == false)
+                    {
+                        screen = true;
+                        screenThread.Start();
+                    } 
+
+                } else if (cmd[0] == "SCRSTOP")
+                {
+                    // screeny stop
+                    if (screen == true)
+                    {
+                        screen = false;
+                        screenThread.Abort();
+                    }
+                } else
                 {
                     this.SetText("Unknown command recieved");
+                    MessageBox.Show(cmd[0]);
                 }
             }
         }
@@ -229,12 +255,16 @@ namespace Snak_Klient
             try
             {
                 // adres ip serwera
+                string ip = textBox1.Text;
+
                 serwerDanychIP = IPAddress.Parse(textBox1.Text);
 
                 if (textBox2.Text == "")
                 {
                     throw new Exception();
                 }
+
+                Screenshot.ipSerwera = ip;
 
                 WyslijWiadomoscUDP("HI:" + adresLokalnyIP + ":" + textBox2.Text + ":");
                 this.SetText("Wyslano komunikat HI:" + adresLokalnyIP + ":");
@@ -254,7 +284,7 @@ namespace Snak_Klient
                 backgroundWorker1.RunWorkerAsync();
 
                 // Firewall
-                firewallController = new FirewallController();
+                //firewallController = new FirewallController();
 
                 // Procesy
                 processController = new ProcessManagement(serwerDanychIP.ToString(), adresLokalnyIP);
