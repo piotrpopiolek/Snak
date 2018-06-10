@@ -56,6 +56,7 @@ namespace Server_Snak
             IPAddress ip = Dns.GetHostAddresses(Dns.GetHostName()).Where(address => address.AddressFamily == AddressFamily.InterNetwork).First();
             // Convert to string
             string adresLokalnyIP = ip.ToString();
+            labelIPSerwera.Text = adresLokalnyIP;
         }
 
         //Bezpieczne odwoływanie się z innego wątku do własności kontrolek
