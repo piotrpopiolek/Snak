@@ -1,2 +1,5 @@
-facebook.pl
 facebook.com
+facebook.pl
+msdn.microsoft.com
+stackoverflow.com
+youtube.com

@@ -250,7 +250,8 @@ namespace Snak_Klient
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Łączenie z serwerem
+        private void connectToServer_Click(object sender, EventArgs e)
         {
             try
             {
@@ -272,7 +273,7 @@ namespace Snak_Klient
                 // wywalenie ekranu laczenia
                 label2.Visible = false;
                 textBox1.Visible = false;
-                button1.Visible = false;
+                connectToServer.Visible = false;
                 label3.Visible = false;
                 textBox2.Visible = false;
 
@@ -306,6 +307,61 @@ namespace Snak_Klient
         private void backgroundWorker3_DoWork(object sender, DoWorkEventArgs e)
         {
             processController.guardPassive();
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                try
+                {
+                    // adres ip serwera
+                    string ip = textBox1.Text;
+
+                    serwerDanychIP = IPAddress.Parse(textBox1.Text);
+
+                    if (textBox2.Text == "")
+                    {
+                        throw new Exception();
+                    }
+
+                    Screenshot.ipSerwera = ip;
+
+                    WyslijWiadomoscUDP("HI:" + adresLokalnyIP + ":" + textBox2.Text + ":");
+                    this.SetText("Wyslano komunikat HI:" + adresLokalnyIP + ":");
+
+                    // wywalenie ekranu laczenia
+                    label2.Visible = false;
+                    textBox1.Visible = false;
+                    connectToServer.Visible = false;
+                    label3.Visible = false;
+                    textBox2.Visible = false;
+
+                    // wlaczenie konsoli
+                    listBox1.Visible = true;
+                    label1.Visible = true;
+
+                    // start polaczenia
+                    backgroundWorker1.RunWorkerAsync();
+
+                    // Firewall
+                    //firewallController = new FirewallController();
+
+                    // Procesy
+                    processController = new ProcessManagement(serwerDanychIP.ToString(), adresLokalnyIP);
+
+                    backgroundWorker2.RunWorkerAsync();
+                    backgroundWorker3.RunWorkerAsync();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Podano zly adres IP lub nie podano nazwy");
+                }
+            }
+            else
+            {
+
+            }
         }
     }
 }

@@ -33,9 +33,19 @@ namespace Server_Snak
         {
             InitializeComponent();
 
+            List<string> listProcesses = File.ReadAllLines(listProcessFile).ToList();
+            List<string> listDomens = File.ReadAllLines(listDomensFile).ToList();
+
+            listProcesses.Sort();
+            listDomens.Sort();
+
+            File.WriteAllLines(listProcessFile, listProcesses);
+            File.WriteAllLines(listDomensFile, listDomens);
+
             //Nowe listBoxy
-            listBoxProcesses.SelectionMode = SelectionMode.MultiSimple;
+            listBoxProcesses.SelectionMode = SelectionMode.MultiSimple;  
             listBoxProcesses.DataSource = File.ReadAllLines(listProcessFile);
+
             listBoxDomens.SelectionMode = SelectionMode.MultiSimple;
             listBoxDomens.DataSource = File.ReadAllLines(listDomensFile);
 
@@ -229,12 +239,12 @@ namespace Server_Snak
                 }
                 else if (cmd[0] == "SCR")
                 {
-                    // wyswietlanie 
-                    byte[] screen = Encoding.ASCII.GetBytes(cmd[1]);
+                    //// wyswietlanie 
+                    //byte[] screen = Encoding.ASCII.GetBytes(cmd[1]);
 
 
-                    //pictureBox1.Image = 
-                    Screenshot.byteArrayToImage(screen);
+                    ////pictureBox1.Image = 
+                    //Screenshot.byteArrayToImage(screen);
 
                 } else
                 if (cmd[0] == "BYE")
@@ -288,16 +298,14 @@ namespace Server_Snak
         {
             File.AppendAllText(listProcessFile, textBoxAddProcesToList.Text + "\n");
             listBoxProcesses.DataSource = File.ReadAllLines(listProcessFile);
-            //Podczas dodawania ma się też od razu wysłać jako rozkaz do klientów
-            //na liscie przykładowych procesów pojawi się po restarcie serwera.
+            textBoxAddProcesToList.Text = "";
         }
 
         private void buttonAddDomenToList_Click(object sender, EventArgs e)
         {
             File.AppendAllText(listDomensFile, textBoxAddDomenToList.Text + "\n");
             listBoxDomens.DataSource = File.ReadAllLines(listDomensFile);
-            //Podczas dodawania ma się też od razu wysłać jako rozkaz do klientów
-            //na liscie przykładowych domen pojawi się po restarcie serwera.
+            textBoxAddDomenToList.Text = "";
         }
 
         private void buttonSendCommandProces_Click(object sender, EventArgs e)
