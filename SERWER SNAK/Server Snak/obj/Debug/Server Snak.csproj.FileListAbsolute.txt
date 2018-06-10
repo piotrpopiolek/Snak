@@ -98,3 +98,13 @@ C:\Users\Lenovo\Documents\GitHub\Snak\SERWER SNAK\Server Snak\obj\Debug\Server S
 C:\Users\Lenovo\Documents\GitHub\Snak\SERWER SNAK\Server Snak\obj\Debug\Server_Snak.Form1.resources
 C:\Users\Lenovo\Documents\GitHub\Snak\SERWER SNAK\Server Snak\obj\Debug\Server_Snak.Properties.Resources.resources
 C:\Users\Lenovo\Documents\GitHub\Snak\SERWER SNAK\Server Snak\obj\Debug\Server Snak.csproj.GenerateResource.Cache
+C:\Users\s0145667\Downloads\Snak-master\Snak-master\SERWER SNAK\Server Snak\bin\Debug\Server Snak.exe.config
+C:\Users\s0145667\Downloads\Snak-master\Snak-master\SERWER SNAK\Server Snak\bin\Debug\Server Snak.exe
+C:\Users\s0145667\Downloads\Snak-master\Snak-master\SERWER SNAK\Server Snak\bin\Debug\Server Snak.pdb
+C:\Users\s0145667\Downloads\Snak-master\Snak-master\SERWER SNAK\Server Snak\obj\Debug\Server Snak.csprojResolveAssemblyReference.cache
+C:\Users\s0145667\Downloads\Snak-master\Snak-master\SERWER SNAK\Server Snak\obj\Debug\Server_Snak.Form1.resources
+C:\Users\s0145667\Downloads\Snak-master\Snak-master\SERWER SNAK\Server Snak\obj\Debug\Server_Snak.Properties.Resources.resources
+C:\Users\s0145667\Downloads\Snak-master\Snak-master\SERWER SNAK\Server Snak\obj\Debug\Server Snak.csproj.GenerateResource.Cache
+C:\Users\s0145667\Downloads\Snak-master\Snak-master\SERWER SNAK\Server Snak\obj\Debug\Server Snak.csproj.CoreCompileInputs.cache
+C:\Users\s0145667\Downloads\Snak-master\Snak-master\SERWER SNAK\Server Snak\obj\Debug\Server Snak.exe
+C:\Users\s0145667\Downloads\Snak-master\Snak-master\SERWER SNAK\Server Snak\obj\Debug\Server Snak.pdb
