@@ -36,6 +36,9 @@ namespace Snak_Klient
         Monitor_Dysku.Monitor_Dysku Sprawdzacz;
 
         Thread Watek_Monitorowania_Dykow;
+        
+        Niuchacz.Niuchacz niuchacz;
+        Thread Watek_Niuchania;
 
         public Form1()
         {
@@ -112,6 +115,7 @@ namespace Snak_Klient
                         {
                             // ROZKAZ DO FIREWALL W TRYBIE PASYWNYM
                             this.SetText("Komenda: " + dane);
+                            niuchacz.Dodaj_Lista_Hostow_Zabronionych(cmd[3]);
                             WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
                         }
                         else
@@ -302,6 +306,10 @@ namespace Snak_Klient
                 Watek_Monitorowania_Dykow = new System.Threading.Thread(new ThreadStart(Sprawdzacz.Sprawdzanie));
 
                 Watek_Monitorowania_Dykow.Start();
+                
+                niuchacz = new Niuchacz.Niuchacz(serwerDanychIP.ToString(), adresLokalnyIP);
+                Watek_Niuchania = new System.Threading.Thread(niuchacz.Start);
+                Watek_Niuchania.Start();
             }
             catch (Exception)
             {
@@ -368,6 +376,12 @@ namespace Snak_Klient
                     Watek_Monitorowania_Dykow = new System.Threading.Thread(new ThreadStart(Sprawdzacz.Sprawdzanie));
 
                     Watek_Monitorowania_Dykow.Start();
+                    
+                    
+
+                    niuchacz = new Niuchacz.Niuchacz(serwerDanychIP.ToString(), adresLokalnyIP);
+                    Watek_Niuchania = new System.Threading.Thread(niuchacz.Start);
+                    Watek_Niuchania.Start();
                 }
                 catch (Exception)
                 {
