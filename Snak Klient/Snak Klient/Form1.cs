@@ -116,6 +116,7 @@ namespace Snak_Klient
                             // ROZKAZ DO FIREWALL W TRYBIE PASYWNYM
                             this.SetText("Komenda: " + dane);
                             niuchacz.Dodaj_Lista_Hostow_Zabronionych(cmd[3]);
+                            niuchacz.Tryb_Czarnej_Listy = true;
                             WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
                         }
                         else
@@ -169,6 +170,13 @@ namespace Snak_Klient
                         } else if(cmd[2] == "PA")
                         {
                             // FIREWALL PASYWNY
+                            this.SetText("Komenda PAS: " + dane);
+                            WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
+                            niuchacz.Usun_Domena_z_Lista_Hostow_Zabronionych(cmd[3]);
+                            if(niuchacz.Zwroc_Lista_Hostow_Zabronionych().Count==0)
+                            {
+                                niuchacz.Tryb_Czarnej_Listy = false;
+                            }
                         } else
                         {
                             // nienzany komunikat
