@@ -6,11 +6,10 @@ using System.Text;
 using System.Net.Sockets;
 using System.Threading;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace Monitor_Dysku
 {
-    class Program
-    {
         public class Monitor_Dysku
         {
             string serwerAddress;
@@ -63,8 +62,10 @@ namespace Monitor_Dysku
 
                             }
                         }
-                        //////////////////////////////////////// Do Zmiany 
-                        //WyslijWiadomoscUDP("NAR:" + clientAddress + ":PS:PA:" + listOfProcesses[j].ToString() + ":");
+                    //////////////////////////////////////// Do Zmiany 
+                    //WyslijWiadomoscUDP("NAR:" + clientAddress + ":PS:PA:" + listOfProcesses[j].ToString() + ":");
+                    MessageBox.Show("asdasd");//jeżeli chcecie by ta wiadomość byłą wyświetlana raz zamieśćcie następującą linie: Aktualizuj_Pierwotna_Liste_Dyskow()
+                    Aktualizuj_Pierwotna_Liste_Dyskow();
                     }
                     System.Threading.Thread.Sleep(1000);
                 }
@@ -119,4 +120,3 @@ namespace Monitor_Dysku
             Watek_Monitorowania_Dykow.Join();
         }*/
     }
-}

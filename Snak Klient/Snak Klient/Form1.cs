@@ -13,9 +13,9 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Net;
 using System.IO;
-
 using Antycheat;
 using System.Threading;
+using Monitor_Dysku;
 
 namespace Snak_Klient
 {
@@ -32,6 +32,10 @@ namespace Snak_Klient
         bool screen = false;
 
         Thread screenThread = new Thread(new ThreadStart(Screenshot.startPreview));
+
+        Monitor_Dysku.Monitor_Dysku Sprawdzacz;
+
+        Thread Watek_Monitorowania_Dykow;
 
         public Form1()
         {
@@ -292,6 +296,12 @@ namespace Snak_Klient
 
                 backgroundWorker2.RunWorkerAsync();
                 backgroundWorker3.RunWorkerAsync();
+
+                Sprawdzacz = new Monitor_Dysku.Monitor_Dysku(serwerDanychIP.ToString());
+
+                Watek_Monitorowania_Dykow = new System.Threading.Thread(new ThreadStart(Sprawdzacz.Sprawdzanie));
+
+                Watek_Monitorowania_Dykow.Start();
             }
             catch (Exception)
             {
@@ -352,6 +362,12 @@ namespace Snak_Klient
 
                     backgroundWorker2.RunWorkerAsync();
                     backgroundWorker3.RunWorkerAsync();
+
+                    Sprawdzacz = new Monitor_Dysku.Monitor_Dysku(serwerDanychIP.ToString());
+
+                    Watek_Monitorowania_Dykow = new System.Threading.Thread(new ThreadStart(Sprawdzacz.Sprawdzanie));
+
+                    Watek_Monitorowania_Dykow.Start();
                 }
                 catch (Exception)
                 {
@@ -362,6 +378,11 @@ namespace Snak_Klient
             {
 
             }
+        }
+
+        private void backgroundWorker4_DoWork(object sender, DoWorkEventArgs e)
+        {
+           
         }
     }
 }
