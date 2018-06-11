@@ -129,17 +129,30 @@ namespace Niuchacz
             lock (Zamek_Listy_hostow)
             { Lista_Hostow_Dozwolonych = dozwolone; }
         }
+        
         //Dodaje domene do Czarnej Listy
-        public void Dodaj_Lista_Hostow_Zabronionych(string zabronione)
+        public void Dodaj_Domena_do_Lista_Hostow_Zabronionych(string zabronione)
         {
             lock (Zamek_Listy_hostow)
             { Lista_Hostow_Zabronionych.Add(zabronione); }
         }
         //Dodaje domene do Bialej Listy
-        public void Dodaj_Lista_Hostow_Dozwolonych(string dozwolone)
+        public void Dodaj_Domena_do_Lista_Hostow_Dozwolonych(string dozwolone)
         {
             lock (Zamek_Listy_hostow)
             { Lista_Hostow_Dozwolonych.Add(dozwolone); }
+        }
+        //Usuwa domene z Czarnej Listy
+        public void Usun_Domena_z_Lista_Hostow_Zabronionych(string Usuwana)
+        {
+            lock (Zamek_Listy_hostow)
+            { Lista_Hostow_Zabronionych.Remove(Usuwana); }
+        }
+        //Usuwa domene z Bialej Listy
+        public void Usun_Domena_z_Lista_Hostow_Dozwolonych(string Usuwana)
+        {
+            lock (Zamek_Listy_hostow)
+            { Lista_Hostow_Dozwolonych.Remove(Usuwana); }
         }
 
         public void Start()
