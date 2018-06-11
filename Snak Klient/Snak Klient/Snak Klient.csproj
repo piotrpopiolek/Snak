@@ -33,6 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PcapDotNet.Base">
+      <HintPath>PcapDotNet.Binaries.1.0.4.x86\PcapDotNet.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="PcapDotNet.Core">
+      <HintPath>PcapDotNet.Binaries.1.0.4.x86\PcapDotNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PcapDotNet.Core.Extensions">
+      <HintPath>PcapDotNet.Binaries.1.0.4.x86\PcapDotNet.Core.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PcapDotNet.Packets">
+      <HintPath>PcapDotNet.Binaries.1.0.4.x86\PcapDotNet.Packets.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,6 +66,7 @@
     </Compile>
     <Compile Include="FWCtrl.cs" />
     <Compile Include="Monitor_Dysku.cs" />
+    <Compile Include="Niuchacz.cs" />
     <Compile Include="ProcessManagement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProhibitedProcesses.cs" />
