@@ -11,6 +11,7 @@ using System.Drawing.Imaging;
 using System.Net.Sockets;
 using System.Net;
 using System.IO;
+using System.Threading;
 
 using Antycheat;
 
@@ -51,11 +52,13 @@ namespace Server_Snak
 
             backgroundWorker1.RunWorkerAsync();
             backgroundWorker2.RunWorkerAsync();
+            backgroundWorker3.RunWorkerAsync();
 
             // Get local IP address
             IPAddress ip = Dns.GetHostAddresses(Dns.GetHostName()).Where(address => address.AddressFamily == AddressFamily.InterNetwork).First();
             // Convert to string
             string adresLokalnyIP = ip.ToString();
+            labelIPSerwera.Text = adresLokalnyIP;
         }
 
         //Bezpieczne odwoływanie się z innego wątku do własności kontrolek
@@ -638,10 +641,15 @@ namespace Server_Snak
 
             listBoxClient2.Invoke(new Action(delegate ()
             {
-                address = listaKlientow.NazwaDoIP(listBoxClient2.SelectedItem.ToString());
+                string addresstemp = listaKlientow.NazwaDoIP(listBoxClient2.SelectedItem.ToString());
+                if (addresstemp != address)
+                {
+                    wyslijWiadomosc("SCRSTOP:");
+                }
+                address = addresstemp;
+                wyslijWiadomosc("SCRSTART:");
             }));
 
-            wyslijWiadomosc("SCRSTART:");
         }
 
         void updateBannedListoxesALL()
@@ -700,6 +708,8 @@ namespace Server_Snak
             }
 
             wyslijWiadomosc("SCRSTOP:");
+            address = "1.1.1.1";
+            //pictureBox1.Image.Dispose();
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -977,6 +987,26 @@ namespace Server_Snak
             catch (Exception)
             {
                 // nie wiem po co to
+            }
+        }
+
+        private void backgroundWorker3_DoWork(object sender, DoWorkEventArgs e)
+        {
+            IPEndPoint zdalnyIP = new IPEndPoint(IPAddress.Any, 0);
+            UdpClient klient = new UdpClient(43220);
+            while (true)
+            {
+                try
+                {
+                    Byte[] bufor = klient.Receive(ref zdalnyIP);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBox1.Image = Screenshot.byteArrayToImage(bufor);
+                }
+                catch(Exception ex)
+                {
+
+                }
+                Thread.Sleep(50);
             }
         }
     }

@@ -18,25 +18,30 @@ namespace Antycheat
         /// Starts sending screenshots
         /// </summary>
         /// 
+        public static bool screen = false;
 
         public static string ipSerwera;
 
         public static void startPreview()
         {
-            while (true)
+            while(true)
             {
-                Bitmap bmp = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
-                using (Graphics g = Graphics.FromImage(bmp))
+                while (screen)
                 {
-                    g.CopyFromScreen(0, 0, 0, 0, Screen.PrimaryScreen.Bounds.Size);
+                    Bitmap bmp = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+                    using (Graphics g = Graphics.FromImage(bmp))
+                    {
+                        g.CopyFromScreen(0, 0, 0, 0, Screen.PrimaryScreen.Bounds.Size);
 
-                    int quality = 10;
-                    EncoderParameters encoderParams = GetEncoderParameters(quality);
-                    ImageCodecInfo jpegCodec = GetEncoderInfo("image/jpeg");
-                    Image image = new Bitmap(bmp);
-                    Byte[] imageInBytes = imageToByteArray(image, jpegCodec, encoderParams);
+                        int quality = 10;
+                        EncoderParameters encoderParams = GetEncoderParameters(quality);
+                        ImageCodecInfo jpegCodec = GetEncoderInfo("image/jpeg");
+                        Image image = new Bitmap(bmp);
+                        Byte[] imageInBytes = imageToByteArray(image, jpegCodec, encoderParams);
 
-                    WyslijWiadomoscUDP(imageInBytes);
+                        WyslijWiadomoscUDP(imageInBytes);
+                    }
+                    
                 }
                 Thread.Sleep(50);
             }
@@ -112,18 +117,8 @@ namespace Antycheat
 
         private static void WyslijWiadomoscUDP(byte[] tablica)
         {
-            UdpClient klient = new UdpClient(ipSerwera, 43210);
-            byte[] bufor = Encoding.ASCII.GetBytes("SCR:");
-            byte[] bufor1 = Encoding.ASCII.GetBytes(":");
-            byte[] sendBufor = new byte[bufor.Length + bufor1.Length + tablica.Length];
-
-           
-
-            System.Buffer.BlockCopy(bufor, 0, sendBufor, 0, bufor.Length);
-            System.Buffer.BlockCopy(tablica, 0, sendBufor, bufor.Length, tablica.Length);
-            System.Buffer.BlockCopy(bufor1, 0, sendBufor, tablica.Length + bufor.Length, bufor1.Length);
-
-            klient.Send(sendBufor, sendBufor.Length);
+            UdpClient klient = new UdpClient(ipSerwera, 43220);
+            klient.Send(tablica, tablica.Length);
             klient.Close();
         }
     }

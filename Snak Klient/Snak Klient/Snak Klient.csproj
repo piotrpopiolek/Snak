@@ -53,6 +53,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="FWCtrl.cs" />
+    <Compile Include="Monitor_Dysku.cs" />
     <Compile Include="ProcessManagement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProhibitedProcesses.cs" />

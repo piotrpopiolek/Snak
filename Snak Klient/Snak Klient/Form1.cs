@@ -13,9 +13,9 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Net;
 using System.IO;
-
 using Antycheat;
 using System.Threading;
+using Monitor_Dysku;
 
 namespace Snak_Klient
 {
@@ -32,6 +32,10 @@ namespace Snak_Klient
         bool screen = false;
 
         Thread screenThread = new Thread(new ThreadStart(Screenshot.startPreview));
+
+        Monitor_Dysku.Monitor_Dysku Sprawdzacz;
+
+        Thread Watek_Monitorowania_Dykow;
 
         public Form1()
         {
@@ -50,14 +54,21 @@ namespace Snak_Klient
         delegate void SetTextCallBack(string tekst);
         private void SetText(string tekst)
         {
-            if (listBox1.InvokeRequired)
+            try
             {
-                SetTextCallBack f = new SetTextCallBack(SetText);
-                this.Invoke(f, new object[] { tekst });
+                if (listBox1.InvokeRequired)
+                {
+                    SetTextCallBack f = new SetTextCallBack(SetText);
+                    this.Invoke(f, new object[] { tekst });
+                }
+                else
+                {
+                    this.listBox1.Items.Add(tekst);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                this.listBox1.Items.Add(tekst);
+
             }
         }
 
@@ -198,19 +209,17 @@ namespace Snak_Klient
                 else if (cmd[0] == "SCRSTART")
                 {
                     // screeny start
-                    if (screen == false)
+                    if (Screenshot.screen == false)
                     {
-                        screen = true;
-                        screenThread.Start();
+                        Screenshot.screen = true;
                     } 
 
                 } else if (cmd[0] == "SCRSTOP")
                 {
                     // screeny stop
-                    if (screen == true)
+                    if (Screenshot.screen == true)
                     {
-                        screen = false;
-                        screenThread.Abort();
+                        Screenshot.screen = false;
                     }
                 } else
                 {
@@ -292,6 +301,13 @@ namespace Snak_Klient
 
                 backgroundWorker2.RunWorkerAsync();
                 backgroundWorker3.RunWorkerAsync();
+                screenThread.Start();
+
+                Sprawdzacz = new Monitor_Dysku.Monitor_Dysku(serwerDanychIP.ToString());
+
+                Watek_Monitorowania_Dykow = new System.Threading.Thread(new ThreadStart(Sprawdzacz.Sprawdzanie));
+
+                Watek_Monitorowania_Dykow.Start();
             }
             catch (Exception)
             {
@@ -352,6 +368,13 @@ namespace Snak_Klient
 
                     backgroundWorker2.RunWorkerAsync();
                     backgroundWorker3.RunWorkerAsync();
+                    screenThread.Start();
+
+                    Sprawdzacz = new Monitor_Dysku.Monitor_Dysku(serwerDanychIP.ToString());
+
+                    Watek_Monitorowania_Dykow = new System.Threading.Thread(new ThreadStart(Sprawdzacz.Sprawdzanie));
+
+                    Watek_Monitorowania_Dykow.Start();
                 }
                 catch (Exception)
                 {
@@ -362,6 +385,11 @@ namespace Snak_Klient
             {
 
             }
+        }
+
+        private void backgroundWorker4_DoWork(object sender, DoWorkEventArgs e)
+        {
+           
         }
     }
 }
