@@ -1,7 +1,6 @@
 ﻿using System;
 using FWCtrl;
 using Antycheat;
-
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +12,6 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Net;
 using System.IO;
-using Antycheat;
 using System.Threading;
 using Monitor_Dysku;
 
@@ -36,9 +34,6 @@ namespace Snak_Klient
         Monitor_Dysku.Monitor_Dysku Sprawdzacz;
 
         Thread Watek_Monitorowania_Dykow;
-        
-        Niuchacz.Niuchacz niuchacz;
-        Thread Watek_Niuchania;
 
         public Form1()
         {
@@ -47,10 +42,11 @@ namespace Snak_Klient
 
             IPHostEntry adresyIP = Dns.GetHostEntry(Dns.GetHostName());
 
-            // Get local IP address
-            IPAddress ip = Dns.GetHostAddresses(Dns.GetHostName()).Where(address => address.AddressFamily == AddressFamily.InterNetwork).First();
-            // Convert to string
-            adresLokalnyIP = ip.ToString();
+            IPAddress[] addresses = Dns.GetHostAddresses(Dns.GetHostName()).Where(a => a.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).ToArray();
+            foreach (IPAddress s in addresses)
+            {
+                SetTextIP(s.ToString());
+            }
         }
 
         //Bezpieczne odwoływanie się z innego wątku do własności kontrolek
@@ -66,6 +62,26 @@ namespace Snak_Klient
             {
                 this.listBox1.Items.Add(tekst);
             }
+        }
+
+        delegate void SetTextCallBackIP(string tekst);
+        private void SetTextIP(string tekst)
+        {
+            if (listBox2.InvokeRequired)
+            {
+                SetTextCallBackIP f = new SetTextCallBackIP(SetText);
+                this.Invoke(f, new object[] { tekst });
+            }
+            else
+            {
+                this.listBox2.Items.Add(tekst);
+            }
+        }
+
+        //Wybór karty sieciowej
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            adresLokalnyIP = listBox2.SelectedItem.ToString();
         }
 
         //####################
@@ -115,8 +131,6 @@ namespace Snak_Klient
                         {
                             // ROZKAZ DO FIREWALL W TRYBIE PASYWNYM
                             this.SetText("Komenda: " + dane);
-                            niuchacz.Dodaj_Lista_Hostow_Zabronionych(cmd[3]);
-                            niuchacz.Tryb_Czarnej_Listy = true;
                             WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
                         }
                         else
@@ -170,13 +184,6 @@ namespace Snak_Klient
                         } else if(cmd[2] == "PA")
                         {
                             // FIREWALL PASYWNY
-                            this.SetText("Komenda PAS: " + dane);
-                            WyslijWiadomoscUDP("PAS:" + adresLokalnyIP + ":" + dane + ":");
-                            niuchacz.Usun_Domena_z_Lista_Hostow_Zabronionych(cmd[3]);
-                            if(niuchacz.Zwroc_Lista_Hostow_Zabronionych().Count==0)
-                            {
-                                niuchacz.Tryb_Czarnej_Listy = false;
-                            }
                         } else
                         {
                             // nienzany komunikat
@@ -292,6 +299,8 @@ namespace Snak_Klient
                 connectToServer.Visible = false;
                 label3.Visible = false;
                 textBox2.Visible = false;
+                listBox2.Visible = false;
+                label4.Visible = false;
 
                 // wlaczenie konsoli
                 listBox1.Visible = true;
@@ -314,10 +323,6 @@ namespace Snak_Klient
                 Watek_Monitorowania_Dykow = new System.Threading.Thread(new ThreadStart(Sprawdzacz.Sprawdzanie));
 
                 Watek_Monitorowania_Dykow.Start();
-                
-                niuchacz = new Niuchacz.Niuchacz(serwerDanychIP.ToString(), adresLokalnyIP);
-                Watek_Niuchania = new System.Threading.Thread(niuchacz.Start);
-                Watek_Niuchania.Start();
             }
             catch (Exception)
             {
@@ -362,6 +367,8 @@ namespace Snak_Klient
                     connectToServer.Visible = false;
                     label3.Visible = false;
                     textBox2.Visible = false;
+                    listBox2.Visible = false;
+                    label4.Visible = false;
 
                     // wlaczenie konsoli
                     listBox1.Visible = true;
@@ -384,12 +391,6 @@ namespace Snak_Klient
                     Watek_Monitorowania_Dykow = new System.Threading.Thread(new ThreadStart(Sprawdzacz.Sprawdzanie));
 
                     Watek_Monitorowania_Dykow.Start();
-                    
-                    
-
-                    niuchacz = new Niuchacz.Niuchacz(serwerDanychIP.ToString(), adresLokalnyIP);
-                    Watek_Niuchania = new System.Threading.Thread(niuchacz.Start);
-                    Watek_Niuchania.Start();
                 }
                 catch (Exception)
                 {
