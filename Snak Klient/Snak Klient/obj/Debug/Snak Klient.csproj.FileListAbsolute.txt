@@ -128,3 +128,15 @@ C:\Users\Tomek\Downloads\Snak-0.1.4\Snak Klient\Snak Klient\obj\Debug\Interop.Ne
 C:\Users\Tomek\Downloads\Snak-0.1.4\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.ResolveComReference.cache
 C:\Users\Tomek\Downloads\Snak-0.1.4\Snak Klient\Snak Klient\obj\Debug\Snak Klient.exe
 C:\Users\Tomek\Downloads\Snak-0.1.4\Snak Klient\Snak Klient\obj\Debug\Snak Klient.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak Klient\Snak Klient\bin\Debug\PcapDotNet.Base.dll
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak Klient\Snak Klient\bin\Debug\PcapDotNet.Core.dll
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak Klient\Snak Klient\bin\Debug\PcapDotNet.Core.Extensions.dll
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak Klient\Snak Klient\bin\Debug\PcapDotNet.Packets.dll
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak Klient\Snak Klient\bin\Debug\PcapDotNet.Base.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak Klient\Snak Klient\bin\Debug\PcapDotNet.Base.xml
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak Klient\Snak Klient\bin\Debug\PcapDotNet.Core.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak Klient\Snak Klient\bin\Debug\PcapDotNet.Core.xml
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak Klient\Snak Klient\bin\Debug\PcapDotNet.Core.Extensions.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak Klient\Snak Klient\bin\Debug\PcapDotNet.Core.Extensions.xml
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak Klient\Snak Klient\bin\Debug\PcapDotNet.Packets.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Snak Klient\Snak Klient\bin\Debug\PcapDotNet.Packets.xml
