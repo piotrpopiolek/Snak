@@ -1,0 +1,9 @@
+Calculator
+chrome
+cmd
+Dropbox
+DropboxUpdate
+firefox
+Skype
+slack
+tasklist
