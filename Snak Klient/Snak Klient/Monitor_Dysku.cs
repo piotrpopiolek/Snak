@@ -82,6 +82,7 @@ namespace Monitor_Dysku
             {
                 Pierwotna_Lista_Dyskow = DriveInfo.GetDrives();
                 zmieniono_liste_dyskow = false;
+                Liczba_Dysków = Pierwotna_Lista_Dyskow.Count();
             }
             public string Zwroc_Aktualna_Liste_Dyskow()
             {
