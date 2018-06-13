@@ -249,6 +249,8 @@ namespace Snak_Klient
         //Wysłanie wiadomości o zakończeniu pracy przez klienta
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Sprawdzacz.Zatrzymaj_Sprawdzanie();
+            Watek_Monitorowania_Dykow.Join();
             try
             {
                 WyslijWiadomoscUDP("BYE:" + adresLokalnyIP + ":");
