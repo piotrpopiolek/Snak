@@ -9,3 +9,4 @@ C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak
 C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Release\Snak Klient.csproj.GenerateResource.Cache
 C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Release\Snak Klient.exe
 C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Release\Snak Klient.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Release\Snak Klient.csprojResolveAssemblyReference.cache

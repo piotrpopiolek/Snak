@@ -41,7 +41,7 @@ namespace Antycheat
                         Image image = new Bitmap(bmp);
                         Byte[] imageInBytes = imageToByteArray(image, jpegCodec, encoderParams);
 
-                        //WyslijWiadomoscUDP(imageInBytes);
+                        WyslijWiadomoscUDP(imageInBytes);
                     }
                     
                 }
@@ -119,9 +119,16 @@ namespace Antycheat
 
         private static void WyslijWiadomoscUDP(byte[] tablica)
         {
-            UdpClient klient = new UdpClient(ipSerwera, 43220);
-            klient.Send(tablica, tablica.Length);
-            klient.Close();
+            try
+            {
+                UdpClient klient = new UdpClient(ipSerwera, 43220);
+                klient.Send(tablica, tablica.Length);
+                klient.Close();
+            }
+            catch(Exception e)
+            {
+
+            }
         }
     }
 }
