@@ -156,17 +156,17 @@ namespace Server_Snak
                 Byte[] bufor = klient.Receive(ref zdalnyIP);
                 string dane = Encoding.ASCII.GetString(bufor);
                 string[] cmd = dane.Split(new char[] { ':' });
-                File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " " + dane + "\n");
                 if (cmd[0] == "HI")
                 {
                     foreach (string wpis in listBoxClient2.Items)
                         if (wpis == cmd[1])
                         {
                             MessageBox.Show("Próba nawiązania połączenia z " + cmd[1] + " odrzucona, ponieważ na liście istnieje już taki klient");
-                            // WYSLIJ ERROR
+                            File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + "Próba nawiązania połączenia z " + cmd[1] + " odrzucona, ponieważ na liście istnieje już taki klient. \n");
                             return;
                         }
                     listaKlientow.DodajKlienta(cmd[2], cmd[1]);
+                    File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + cmd[2] + " o IP " + cmd[1] + " połączył się. \n");
                     this.SetText(cmd[2]);
                 }
                 else
@@ -185,12 +185,14 @@ namespace Server_Snak
                                 // DODANIE DO FIREWALLA W TRYBIE PASYWNYM
                                 string text = nazwaKlienta + ":PA:" + nazwaBlokady;
                                 listaKlientow.dodajDomenePasywna(nazwaKlienta, nazwaBlokady);
+                                File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + nazwaKlienta + " dodanie blokady domeny w trybie pasywnym " + nazwaBlokady + ". \n");
                             }
                             else if (cmd[4] == "AK")
                             {
                                 // DODANIE DO FIREWALLA W TRYBIE AKTYWNYM
                                 string text = nazwaKlienta + ":AK:" + nazwaBlokady;
                                 listaKlientow.dodajDomeneAktywna(nazwaKlienta, nazwaBlokady);
+                                File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + nazwaKlienta + " dodanie blokady domeny w trybie aktywnym " + nazwaBlokady + ". \n");
                             }
                             else
                             {
@@ -205,12 +207,14 @@ namespace Server_Snak
                                 // DODANIE PROCESU W TRYBIE PASYWNYM
                                 string text = nazwaKlienta + ":PA:" + nazwaBlokady;
                                 //this.SetTextProces(text);
+                                File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + nazwaKlienta + " dodanie blokady procesu w trybie pasywnym " + nazwaBlokady + ". \n");
                                 listaKlientow.dodajProcesPasywny(nazwaKlienta, nazwaBlokady);
                             }
                             else if (cmd[4] == "AK")
                             {
                                 // DODANIE PROCESU W TRYBIE AKTYWNYM
                                 string text = nazwaKlienta + ":AK:" + nazwaBlokady;
+                                File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + nazwaKlienta + " dodanie blokady procesu w trybie aktywnym " + nazwaBlokady + ". \n");
                                 //this.SetTextProces(text);
                                 listaKlientow.dodajProcesAktywny(nazwaKlienta, nazwaBlokady);
                             }
@@ -237,13 +241,13 @@ namespace Server_Snak
                             {
                                 // USUNIECIE DOMENY Z FIREWALLA W TRYBIE AKTYWNYM
                                 listaKlientow.usunDomeneAktywna(nazwaKlienta, nazwaBlokady);
-
+                                File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + nazwaKlienta + " zwolnienie domeny w trybie aktywnym " + nazwaBlokady + ". \n");
                                 updateBannedListboxes();
                             } else if (cmd[4] == "PA")
                             {
                                 // USUNIECIE DOMENY Z FIREWALLA W TRYBIE PASYWNYM
                                 listaKlientow.usunDomenePasywna(nazwaKlienta, nazwaBlokady);
-
+                                File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + nazwaKlienta + " zwolnienie domeny w trybie pasywnym " + nazwaBlokady + ". \n");
                                 updateBannedListboxes();
                             } else
                             {
@@ -255,14 +259,14 @@ namespace Server_Snak
                             if (cmd[4] == "AK")
                             {
                                 // USUNIECIE PROCESU W TRYBIE AKTYWNYM
-
+                                File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + nazwaKlienta + " zwolnienie procesu w trybie aktywnym " + nazwaBlokady + ". \n");
                                 listaKlientow.usunProcesAktywny(nazwaKlienta, nazwaBlokady);
 
                                 updateBannedListboxes();
                             } else if (cmd[4] == "PA")
                             {
                                 // USUNIECIE PROCESU W TRYBIE PASYWNYM
-
+                                File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + nazwaKlienta + " zwolnienie procesu w trybie pasywnym " + nazwaBlokady + ". \n");
                                 listaKlientow.usunProcesPasywny(nazwaKlienta, nazwaBlokady);
 
                                 updateBannedListboxes();
@@ -287,6 +291,7 @@ namespace Server_Snak
                 if (cmd[0] == "NAR")
                 {
                     // NARUSZENIE
+                    File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + listaKlientow.IPDoNazwy(cmd[1]) + cmd[0] + " ." + "\n");
                 }
                 else if (cmd[0] == "SCR")
                 {
@@ -305,7 +310,7 @@ namespace Server_Snak
                         if (listBoxClient2.Items[i].ToString() == nazwa)
                             this.RemoveText(i);
                     listaKlientow.UsunKlienta(cmd[1]);
-
+                    File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + nazwa + " rozłączył się." + ". \n");
 
                     checkBox2.Invoke(new Action(delegate ()
                     {

@@ -134,3 +134,15 @@ C:\Users\Lenovo\Dropbox\Semest 6\Projekt zespołowy\12 czerwca\Downloads\Snak-0.
 C:\Users\Lenovo\Dropbox\Semest 6\Projekt zespołowy\12 czerwca\Downloads\Snak-0.1.3 (1)\Snak-0.1.3\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.GenerateResource.Cache
 C:\Users\Lenovo\Dropbox\Semest 6\Projekt zespołowy\12 czerwca\Downloads\Snak-0.1.3 (1)\Snak-0.1.3\Snak Klient\Snak Klient\obj\Debug\Snak Klient.exe
 C:\Users\Lenovo\Dropbox\Semest 6\Projekt zespołowy\12 czerwca\Downloads\Snak-0.1.3 (1)\Snak-0.1.3\Snak Klient\Snak Klient\obj\Debug\Snak Klient.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe.config
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Debug\Interop.NETCONLib.dll
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Debug\Interop.NetFwTypeLib.dll
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.ResolveComReference.cache
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Debug\Snak Klient.exe
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Debug\Snak Klient.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\bin\Debug\Snak Klient.exe
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\bin\Debug\Snak Klient.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Form1.resources
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Debug\Snak_Klient.Properties.Resources.resources
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Debug\Snak Klient.csproj.GenerateResource.Cache

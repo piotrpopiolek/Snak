@@ -1,4 +1,6 @@
+calc
 Calculator
+chrome
 chrome
 cmd
 Dropbox

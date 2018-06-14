@@ -1,0 +1,4 @@
+13:00:11 Klient T o IP 192.168.0.15 połączył się. 
+13:00:29 Klient T dodanie blokady domeny w trybie aktywnym facebook.pl. 
+13:00:35 Klient T dodanie blokady procesu w trybie aktywnym cmd. 
+13:00:43 Klient T zwolnienie procesu w trybie aktywnym cmd. 

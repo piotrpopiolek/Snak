@@ -1,0 +1,10 @@
+12:54:51 Klient 192.168.0.15 o IP Testy połączył się. 
+12:54:58 Klient Testy dodanie blokady procesu w trybie aktywnym cmd
+12:55:02 Klient Testy dodanie blokady procesu w trybie aktywnym Dropbox
+12:55:04 Klient TestyNAR .
+12:55:04 Klient TestyNAR .
+12:55:04 Klient TestyNAR .
+12:55:08 Klient Testy zwolnienie procesu w trybie aktywnym cmd
+12:55:11 Klient Testy zwolnienie procesu w trybie aktywnym Dropbox
+12:55:18 Klient Testy dodanie blokady procesu w trybie pasywnym Dropbox
+12:55:41 Klient Testy rozłączył się.

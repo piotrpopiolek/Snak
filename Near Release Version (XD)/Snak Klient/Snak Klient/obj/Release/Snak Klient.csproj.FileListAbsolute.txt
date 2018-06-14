@@ -1,0 +1,11 @@
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\bin\Release\Snak Klient.exe.config
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Release\Interop.NETCONLib.dll
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Release\Interop.NetFwTypeLib.dll
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Release\Snak Klient.csproj.ResolveComReference.cache
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\bin\Release\Snak Klient.exe
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\bin\Release\Snak Klient.pdb
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Release\Snak_Klient.Form1.resources
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Release\Snak_Klient.Properties.Resources.resources
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Release\Snak Klient.csproj.GenerateResource.Cache
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Release\Snak Klient.exe
+C:\Users\Lenovo\Documents\GitHub\Snak\Near Release Version (XD)\Snak Klient\Snak Klient\obj\Release\Snak Klient.pdb
