@@ -291,7 +291,7 @@ namespace Server_Snak
                 if (cmd[0] == "NAR")
                 {
                     // NARUSZENIE
-                    File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + listaKlientow.IPDoNazwy(cmd[1]) + cmd[0] + " ." + "\n");
+                    File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + listaKlientow.IPDoNazwy(cmd[1]) + " naruszył " +cmd[2] + " ." + "\n");
                 }
                 else if (cmd[0] == "SCR")
                 {
@@ -310,7 +310,7 @@ namespace Server_Snak
                         if (listBoxClient2.Items[i].ToString() == nazwa)
                             this.RemoveText(i);
                     listaKlientow.UsunKlienta(cmd[1]);
-                    File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + nazwa + " rozłączył się." + ". \n");
+                    File.AppendAllText(plik, DateTime.Now.ToString("HH:mm:ss") + " Klient " + nazwa + " rozłączył się. " + ". \n");
 
                     checkBox2.Invoke(new Action(delegate ()
                     {
